@@ -2,7 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'CodeCraft',
+  title: 'Paintnokio',
   tagline: 'People making open-source and free software.',
   favicon: 'img/favicon.ico',
 
@@ -10,7 +10,7 @@ const config = {
   baseUrl: '/',
 
   organizationName: 'Paintnokio', 
-  projectName: 'Paintnokio.dev',
+  projectName: 'Paintnokio',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
