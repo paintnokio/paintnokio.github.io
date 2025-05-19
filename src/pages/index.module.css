@@ -1,0 +1,254 @@
+/* Color Variables */
+:root {
+  --primary-dark: #2b5876;
+  --primary-light: #4e4376;
+  --accent-color: #5e72e4;
+  --light-text: rgba(255, 255, 255, 0.9);
+  --dark-text: #2d3748;
+}
+
+[data-theme='dark'] {
+  --primary-dark: #3a7bd5;
+  --primary-light: #00d2ff;
+  --accent-color: #7b90ff;
+  --light-text: rgba(255, 255, 255, 0.9);
+  --dark-text: #e2e8f0;
+}
+
+/* Hero Section */
+/* src/css/custom.css */
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg, 
+    #2b5876 0%, 
+    #4e4376 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientBG 8s ease infinite;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 75% 30%, rgba(255,255,255,0.1) 0%, transparent 25%),
+    radial-gradient(circle at 25% 70%, rgba(255,255,255,0.08) 0%, transparent 25%);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #fff 0%, #bbb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 300;
+  position: relative;
+}
+
+.heroBanner .buttons {
+  position: relative;
+  z-index: 1;
+  gap: 1rem;
+}
+
+.heroBanner .button {
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: 2px solid transparent;
+}
+
+.heroBanner .button--primary {
+  background: white;
+  color: #4e4376;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.heroBanner .button--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  background: #f8f9fa;
+}
+
+.heroBanner .button--secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+  backdrop-filter: blur(5px);
+}
+
+.heroBanner .button--secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-3px);
+}
+
+/* Floating animation for logo */
+.heroBanner .logo {
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+  margin-bottom: 1.5rem;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 0;
+  }
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Feature Cards */
+.featureCard {
+  padding: 1rem;
+}
+
+.featureContent {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.featureContent:hover {
+  transform: translateY(-5px);
+}
+
+.featureIconContainer {
+  margin-bottom: 1.5rem;
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.featureDescription {
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+/* Tool Cards */
+.toolCard {
+  padding: 1rem;
+}
+
+.toolContent {
+  height: 100%;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.toolContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.toolHeader {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toolIcon {
+  font-size: 1.5rem;
+}
+
+.toolTitle {
+  margin: 0;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.toolBody {
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.toolDescription {
+  margin: 0;
+  color: var(--ifm-font-color-base);
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 996px) {
+  .featureContent {
+    padding: 1.5rem 1rem;
+  }
+  
+  .featureIcon {
+    font-size: 2rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+  
+  .featureDescription {
+    font-size: 0.95rem;
+  }
+  
+  .toolHeader {
+    padding: 1rem;
+  }
+  
+  .toolBody {
+    padding: 1rem;
+  }
+}
