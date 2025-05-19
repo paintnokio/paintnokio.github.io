@@ -13,14 +13,14 @@ export default function Home() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <div className={styles.heroContent}>
-            <img 
-              src="/img/logo.svg" 
+            {/* <img 
+              src="/img/hero-joga.svg" 
               alt="CodeCraft Logo" 
               className={styles.logo} 
               width="120"
               height="120"
-            />
-            <h1 className="hero__title">CodeCraft</h1>
+            /> */}
+            <h1 className="hero__title">Code Craft</h1>
             <p className="hero__subtitle">Open-source tools for Windows enthusiasts</p>
             <div className={styles.buttons}>
               <a
