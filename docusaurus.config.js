@@ -6,11 +6,11 @@ const config = {
   tagline: 'People making open-source and free software.',
   favicon: 'img/favicon.ico',
 
-  url: 'https://gravesoft.dev/',
+  url: 'https://paintnokio.github.io',
   baseUrl: '/',
 
-  organizationName: 'Gravesoft', 
-  projectName: 'Gravesoft.dev',
+  organizationName: 'Paintnokio', 
+  projectName: 'Paintnokio.dev',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
