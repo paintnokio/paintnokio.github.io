@@ -36,7 +36,7 @@ const config = {
           sidebarPath: './sidebars.js',
 
           editUrl:
-            'https://github.com/gravesoft/gravesoft.dev/tree/main/',
+            'https://github.com/paintnokio/paintnokio.github.io/tree/main/',
         },
         blog: false,
         theme: {
@@ -100,14 +100,14 @@ const config = {
           },
           /* {to: '/blog', label: 'Blog', position: 'left'}, */
           {
-            href: 'https://discord.gg/yJ8phEmbw9',
+            href: 'https://discord.com/invite/SR3cXNq2',
             className: 'discord-button',
             position: 'right',
             label: 'Discord',
             "title": 'Chat with us on Discord',
           },
           {
-            href: 'https://github.com/gravesoft',
+            href: 'https://github.com/paintnokio',
             className: 'github-button',
             position: 'right',
             label: 'GitHub',
