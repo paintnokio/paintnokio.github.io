@@ -116,7 +116,7 @@ const config = {
         ],
       },
       footer: {
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} DevComp, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

@@ -6,7 +6,7 @@ import styles from './index.module.css';
 export default function Home() {
   return (
     <Layout
-      title="CodeCraft - Open Source Solutions"
+      title="DevComp - Open Source Solutions"
       description="Free Windows/Office activators and system tools">
       
       {/* Hero Banner */}
@@ -20,7 +20,7 @@ export default function Home() {
               width="120"
               height="120"
             /> */}
-            <h1 className="hero__title">Code Craft</h1>
+            <h1 className="hero__title">Dev Comp</h1>
             <p className="hero__subtitle">Alat sumber terbuka untuk penggemar Windows</p>
             <div className={styles.buttons}>
               <a
