@@ -2,15 +2,15 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Paintnokio',
+  title: 'Devcomp',
   tagline: 'People making open-source and free software.',
   favicon: 'img/favicon.ico',
 
   url: 'https://paintnokio.github.io',
   baseUrl: '/',
 
-  organizationName: 'Paintnokio', 
-  projectName: 'Paintnokio',
+  organizationName: 'devcomp.fun', 
+  projectName: 'devcomp.fun',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -64,7 +64,7 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'CodeCraft',
+          alt: 'DevComp.fun',
           src: 'img/logo.png',
         },
         items: [
