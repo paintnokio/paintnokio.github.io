@@ -56,7 +56,7 @@ export default function Home() {
               <FeatureCard 
                 icon="🔄" 
                 title="Sepenuhnya Gratis"
-                description="FGratis selamanya dengan kode sumber terbuka"
+                description="Gratis selamanya dengan kode sumber terbuka"
               />
             </div>
           </div>

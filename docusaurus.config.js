@@ -3,10 +3,10 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Devcomp',
-  tagline: 'People making open-source and free software.',
+  tagline: 'Orang-orang yang membuat perangkat lunak sumber terbuka dan gratis.',
   favicon: 'img/favicon.ico',
 
-  url: 'https://paintnokio.github.io',
+  url: 'https://devcomp.fun',  // Ganti dengan custom domain Anda
   baseUrl: '/',
 
   organizationName: 'devcomp.fun', 
