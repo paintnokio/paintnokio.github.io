@@ -1,70 +1,65 @@
-# Clean Install Windows
+# Instal Windows
 
-Guide on how to backup your data and clean install Windows.
+Panduan tentang cara mencadangkan data dan menginstal ulang Windows.
 
 ---
 
-## Prerequisites
+## Prasyarat
 
-- A genuine Windows ISO file, you can download from https://msdl.gravesoft.dev/
-- The latest version of Rufus from https://rufus.ie/
-- A minimum 8GB USB drive  
-- Follow this [guide](remove_malware.md) before making a bootable USB if you think the system has malware.
+- File ISO Windows asli, Anda dapat mengunduhnya dari https://paintnokio.github.io/microsoft-download-list/
+- Versi terbaru Rufus dari https://rufus.ie/
+- Drive USB minimal 8GB 
+- Ikuti [panduan] ini(remove_malware.md) sebelum membuat USB yang dapat di-boot jika Anda merasa sistem tersebut terkena malware.
+
 <details>
-  <summary>Another clean system if your current system is infected with File infector malware.</summary>
+  <summary>Sistem bersih lainnya jika sistem Anda saat ini terinfeksi dengan malware File infector.</summary>
 
-  **Why?**  
-  Because file infector malware can copy itself to the bootable USB that you are going to make to perform a clean installation.  
-  You need to use another clean system to make a bootable USB and plug it into the current infected system only when it's not running live Windows.  
-  **How to check if you have file infector malware?**  
-  Open PowerShell as admin and enter  
+**Mengapa?** 
+  Karena malware penginfeksi file dapat menyalin dirinya sendiri ke USB yang dapat di-boot yang akan Anda buat untuk melakukan instalasi bersih.
+  Anda perlu menggunakan sistem bersih lain untuk membuat USB yang dapat di-boot dan mencolokkannya ke sistem yang terinfeksi saat ini hanya jika tidak menjalankan Windows secara langsung. 
+**Bagaimana cara memeriksa apakah Anda memiliki malware penginfeksi file?** 
+  Buka PowerShell sebagai admin dan masukkan
   `sc.exe start "sppsvc" > $null 2>&1; Write-Host "Error code: $LASTEXITCODE"`  
   If the output is 577 or 225, then most likely chances are that the system is infected with File infector malware. 
   
-  **What if you don't have another clean system?**  
-  You can try Dr.Web https://free.drweb.com/download+cureit/gr to remove file infector malware. However in some cases, it may miss to remove all, that's why its best to make bootable USB on another clean system.
-
+**Bagaimana jika Anda tidak memiliki sistem bersih lainnya?**
+  Anda dapat mencoba Dr.Web https://free.drweb.com/download+cureit/gr untuk menghapus malware penginfeksi file. Namun dalam beberapa kasus, mungkin tidak dapat menghapus semuanya, oleh karena itu sebaiknya buat USB yang dapat di-boot pada sistem lain yang bersih.
 
 </details>
 
 ---
 
-## Back up your data
+## Cadangkan data Anda
 
-The clean installation process will format the C drive where Windows is installed; if you have any data in the C drive, you need to back it up.
+Proses instalasi bersih akan memformat drive C tempat Windows diinstal; jika Anda memiliki data apa pun di drive C, Anda perlu mencadangkannya.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="multiple_partition" label="I have multiple partitions on my drive, like C:\ D:\" default>
-
-- You can copy your data from C drive and paste it into other partitions.
-- Your data is usually located in the below place on the C drive,  
-  - Go to this folder `C:\Users` and then select the user account that you are using.
-  - Your data is saved in Desktop, Documents, Downloads, Music, Pictures, and Videos folders.
-  - Save these folders in another partition to backup.
-
-</TabItem>
-
-<TabItem value="one_partition" label="I have C:\ drive only" default>
-
-- Your data is usually located in the below place on the C drive,  
-  - Go to this folder `C:\Users` and then select the user account that you are using.
-  - Your data is saved in Desktop, Documents, Downloads, Music, Pictures, and Videos folders.
-- If you have a **small amount of data** to back up, save it on the below listed online drives or the USB drive after making it bootable with Rufus.
-- If you have a **large amount of data** that you can't save on an external drive or online drive,  
-  - Create another partition using this guide https://youtu.be/_HgjasKuOBw
-  - Save your data onto that other newly created partition.
-
-</TabItem>
+  <TabItem value="multiple_partition" label=" Contoh, Seperti C:\ D:\ Dua Drive" default>
+Anda dapat menyalin data dari drive C dan menempelkannya ke partisi lain.
+Data Anda biasanya terletak di tempat berikut pada drive C.
+Buka folder ini `C:\Users` lalu pilih akun pengguna yang Anda gunakan.
+Data Anda disimpan di folder Desktop, Documents, Downloads, Music, Pictures, dan Videos.
+Simpan folder ini di partisi lain untuk dicadangkan.
+  </TabItem>
+  <TabItem value="one_partition" label="Contoh, Seperti C:\ Satu Drive">
+Data Anda biasanya terletak di tempat berikut pada drive C, 
+Buka folder ini `C:\Users` lalu pilih akun pengguna yang Anda gunakan.
+Data Anda disimpan di folder Desktop, Documents, Downloads, Music, Pictures, dan Videos.
+Jika Anda memiliki **sedikit data** untuk dicadangkan, simpan di drive online yang tercantum di bawah ini atau drive USB setelah membuatnya dapat di-boot dengan Rufus.
+Jika Anda memiliki **banyak data** yang tidak dapat disimpan di drive eksternal atau drive online, 
+Buat partisi lain menggunakan panduan ini https://youtu.be/_HgjasKuOBw
+Simpan data Anda ke partisi lain yang baru dibuat.
+  </TabItem>
 </Tabs>
 
 ---
 
 :::tip
 
-It's highly recommended to backup your critical data on some online drive as well, for example,  
+Sangat disarankan untuk mencadangkan data penting Anda pada beberapa drive online juga, misalnya, 
 [GoogleDrive](https://drive.google.com/) - 15GB Free  
 [OneDrive](https://onedrive.live.com/) - 5GB Free  
 [Mega](https://mega.io/) - 20GB Free  
@@ -74,84 +69,89 @@ It's highly recommended to backup your critical data on some online drive as wel
 
 ---
 
-## Create a bootable USB with Rufus
+## Buat USB yang dapat di-boot dengan Rufus
 
-- Plug your USB drive into the system. (Its data will be deleted.)
-- Launch Rufus which you downloaded earlier.
-- In the "Device" dropdown, select your USB flash drive.
-- Boot Selection:
-  - Click "SELECT" and choose your Windows ISO file. Rufus will auto-configure optimal settings.
-- Click "START."
-- Wait for Rufus to create the bootable USB. It may take several minutes. You'll see "READY" when done.
+- Hubungkan drive USB Anda ke sistem. (Datanya akan dihapus.)
+- Luncurkan Rufus yang Anda unduh sebelumnya.
+- Pada menu tarik-turun "Device", pilih flash drive USB Anda.
+- Pemilihan Booting:
+- Klik "SELECT" dan pilih berkas ISO Windows Anda. Rufus akan mengonfigurasi pengaturan optimal secara otomatis.
+- Klik "START."
+- Tunggu Rufus membuat USB yang dapat di-boot. Mungkin perlu waktu beberapa menit. Anda akan melihat "READY" setelah selesai.
 
 ---
 
-## Windows 11 on Unsupported Hardware
+## Windows 11 pada Perangkat Keras yang Tidak Didukung
 
 <details>
-  <summary>Click here to view</summary>
+  <summary>Klik di sini untuk melihat</summary>
 
-- Rufus can help you install Windows 11 on unsupported hardware, but you will encounter problems with future feature updates since Microsoft does not permit that on such hardware.
-- To resolve this issue, you need to install IoT Enterprise 24H2 (2024) edition which is [officially supported](https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/Hardware/System_Requirements?tabs=Windows11LTSC#optional-minimum-requirements) on unsupported hardware. Don't worry about it being an unusual edition; it's binary identical to other editions, with the primary difference being the licensing.
-- This IoT Enterprise edition comes in 2 flavors,
-  - IoT Enterprise (GAC, General Availability Channel) 
-  - IoT Enterprise (LTSC, Long-Term Servicing Channel)
-- Next question, how do we install this edition?  
-  - For GAC version, you don't need IoT Enterprise ISO, you can simply use regular Windows 11 24H2 consumer (linked at the top) or business ISO.
-  - For LTSC version, you need to download the full version of LTSC ISO (don't use eval), it doesn't have to be IoT ISO, you can download a normal LTSC ISO in your language.
-  - After flashing the required ISO using Rufus, navigate to the `\sources\` folder on the USB drive and create a file named `PID.txt` (ensure the file extension is correct). Open this file with Notepad and enter the text below.
-    - For GAC version  
+- Rufus dapat membantu Anda menginstal Windows 11 pada perangkat keras yang tidak didukung, tetapi Anda akan mengalami masalah dengan pembaruan fitur di masa mendatang karena Microsoft tidak mengizinkannya pada perangkat keras tersebut.
+- Untuk mengatasi masalah ini, Anda perlu menginstal IoT Enterprise 24H2 (2024) edition yang [didukung secara resmi](https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/Hardware/System_Requirements?tabs=Windows11LTSC#optional-minimum-requirements) pada perangkat keras yang tidak didukung. Jangan khawatir karena ini adalah edisi yang tidak biasa; versi binernya identik dengan edisi lain, dengan perbedaan utama terletak pada lisensinya.
+- Edisi IoT Enterprise ini hadir dalam 2 versi,
+- IoT Enterprise (GAC, General Availability Channel)
+- IoT Enterprise (LTSC, Long-Term Servicing Channel)
+- Pertanyaan berikutnya, bagaimana cara menginstal edisi ini?
+- Untuk versi GAC, Anda tidak memerlukan IoT Enterprise ISO, Anda cukup menggunakan Windows 11 24H2 consumer (tertaut di bagian atas) atau business ISO biasa.
+- Untuk versi LTSC, Anda perlu mengunduh versi lengkap LTSC ISO (jangan gunakan eval), tidak harus IoT ISO, Anda dapat mengunduh LTSC ISO biasa dalam bahasa Anda.
+  - Setelah mem-flash ISO yang diperlukan menggunakan Rufus, navigasikan ke `\sources\` 
+folder pada drive USB dan buat file bernama `PID.txt` (pastikan ekstensi file sudah benar). Buka file ini dengan Notepad dan masukkan teks di bawah ini.
+
+    - Untuk versi GAC  
 	  ```
 	  [PID]
 	  Value=XQQYW-NFFMW-XJPBH-K8732-CKFFD
 	  ```
-    - For LTSC version  
+    - Untuk versi LTSC 
 	  ```
 	  [PID]
 	  Value=CGK42-GYN6Y-VD22B-BX98W-J8JXD
 	  ```
-- When installing Windows, be sure not to use the old version of the installer.
-- That's it. The setup will auto-pick the IoT Enterprise edition.
+- Saat menginstal Windows, pastikan untuk tidak menggunakan versi lama penginstal.
+- Selesai. Pengaturan akan otomatis memilih edisi IoT Enterprise.
 
-Alternatively, if you don't want to do that, you can install Windows normally and later change the edition to IoT Enterprise.
+Atau, jika Anda tidak ingin melakukannya, Anda dapat menginstal Windows secara normal dan kemudian mengubah edisi ke IoT Enterprise.
 
 </details>
 
 ---
 
-## Edition List During Windows Installation
+## Daftar Edisi Selama Instalasi Windows
 
 <details>
-  <summary>Click here to view</summary>
+  <summary>CKlik di sini untuk melihat</summary>
   
-- If your system has an OEM license installed by the manufacturer on the motherboard, then the Windows setup will not show the edition list and will automatically select the edition based on the license on the motherboard.
-- If you have such hardware and want to view the list of available editions for Windows installation, follow the steps below.
-- After flashing the required ISO using Rufus, navigate to the `\sources\` folder on the USB drive and create a file named `ei.cfg` (ensure the file extension is correct). Open this file with Notepad and enter the text below.
+- Jika sistem Anda memiliki lisensi OEM yang dipasang oleh produsen pada motherboard, maka pengaturan Windows tidak akan menampilkan daftar edisi dan akan secara otomatis memilih edisi berdasarkan lisensi pada motherboard.
+- Jika Anda memiliki perangkat keras tersebut dan ingin melihat daftar edisi yang tersedia untuk instalasi Windows, ikuti langkah-langkah di bawah ini.
+- Setelah mem-flash ISO yang diperlukan menggunakan Rufus, navigasikan ke `\sources\` 
+folder pada drive USB dan buat file bernama `ei.cfg` (pastikan ekstensi file sudah benar). Buka file ini dengan Notepad dan masukkan teks di bawah ini.
+
 ```
 [Channel]
 NoKeyChannel
 ```
-- Now you can view the edition list and pick the edition you want from Windows Vista to Windows 11. It also helps you avoid installing key in Windows 8/8.1 setup where key installation can not be skipped.
+- Sekarang Anda dapat melihat daftar edisi dan memilih edisi yang Anda inginkan dari Windows Vista hingga Windows 11. Ini juga membantu Anda menghindari penginstalan kunci dalam pengaturan Windows 8/8.1 di mana penginstalan kunci tidak dapat dilewati.
 
-**Notes:**  
-- In Windows 11 24H2, the new installer does not support this, so you need to select the "old" installer option when the setup starts.
-- If you are using PID.txt, please note that it will take precedence over ei.cfg.
+**Catatan:** 
+- Di Windows 11 24H2, penginstal baru tidak mendukung ini, jadi Anda perlu memilih opsi penginstal "lama" saat pengaturan dimulai.
+- Jika Anda menggunakan PID.txt, harap perhatikan bahwa ini akan diutamakan daripada ei.cfg.
 
 </details>
 
 ---
 
-## Clean Install Windows
+## Instal Bersih Windows
 
-- Disconnect all external or non-boot internal drives to reduce installation risks.
-- Restart your PC and boot from the USB flash drive, typically accessed by pressing F11 or F12 during startup. If it's not working for you then Google the type of device you have followed by "boot menu key", for example, "Asus Zephyrus G14 boot menu key" and find the results for your model number.
-- Follow on-screen instructions.
-  - Choose "Custom: Install Windows only (advanced)" for a clean install.
-  - Delete all partitions on the boot drive, or if you want to save data partitions then delete only the C drive and other small system partitions, and select the unallocated space created.
-  - Click "Next" to start the installation. Windows will auto-create the necessary partitions.
+- Lepaskan semua drive eksternal atau internal yang tidak bisa di-boot untuk mengurangi risiko penginstalan.
+- Nyalakan ulang PC Anda dan boot dari flash drive USB, biasanya diakses dengan menekan F11 atau F12 saat memulai. Jika tidak berhasil, cari di Google jenis perangkat yang Anda miliki diikuti dengan "tombol menu boot", misalnya, "tombol menu boot Asus Zephyrus G14" dan temukan hasil untuk nomor model Anda.
+- Ikuti petunjuk di layar.
+- Pilih "Kustom: Instal Windows saja (lanjutan)" untuk penginstalan bersih.
+- Hapus semua partisi pada drive boot, atau jika Anda ingin menyimpan partisi data, hapus hanya drive C dan partisi sistem kecil lainnya, dan pilih ruang yang tidak terisi yang dibuat.
+- Klik "Berikutnya" untuk memulai penginstalan. Windows akan secara otomatis membuat partisi yang diperlukan.
 
 :::tip
 
--   You can [connect with us](troubleshoot.md) for help if you need.
+- 
+Anda dapat [terhubung dengan kami](troubleshoot.md) untuk bantuan jika Anda membutuhkan.
 
 :::

@@ -1,8 +1,10 @@
-# Troubleshooting
+# Penyelesaian Masalah
 
--   **Make sure** you are using the latest version.
+-   **Pastikan** Anda menggunakan versi terbaru.
 
--   **Reach out to us** on [Discord](https://discord.gg/yJ8phEmbw9) (signup not required) or [GitHub](https://github.com/gravesoft) with an error screenshot.
+-   **Hubungi kami** di [Discord](https://discord.gg/yJ8phEmbw9) (
+pendaftaran tidak diperlukan) atau [GitHub](https://paintnokio.github.io) 
+dengan tangkapan layar kesalahan.
 
 import DiscordBadge from '@site/src/components/DiscordBadge';
 

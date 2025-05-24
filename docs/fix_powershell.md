@@ -1,21 +1,21 @@
-# Fix PowerShell
+# Perbaiki PowerShell
 
-Scripts may show an error related to Powershell not working.
+Skrip mungkin menampilkan kesalahan terkait Powershell yang tidak berfungsi.
 
 ---
 
-## ConstrainedLanguage
+## Bahasa Terbatas
 
--  If the script is showing `ConstrainedLanguage` in error output then open the command prompt as admin and enter,
+-  Jika skrip menampilkan `Bahasa Terbatas` dalam output kesalahan, buka command prompt sebagai admin dan masukkan,
 
 ```
 reg delete "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v "__PSLockdownPolicy" /f
 ```
 
--  Retry the script, the error should be fixed.
+-  Coba lagi skripnya, kesalahan seharusnya sudah diperbaiki.
 
 ---
 
-## Other Errors
+## Kesalahan Lainnya
 
-Please connect with us [here](troubleshoot.md).
+Silakan terhubung dengan kami [disini](troubleshoot.md).

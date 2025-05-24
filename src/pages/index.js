@@ -21,17 +21,17 @@ export default function Home() {
               height="120"
             /> */}
             <h1 className="hero__title">Code Craft</h1>
-            <p className="hero__subtitle">Open-source tools for Windows enthusiasts</p>
+            <p className="hero__subtitle">Alat sumber terbuka untuk penggemar Windows</p>
             <div className={styles.buttons}>
               <a
                 className="button button--secondary button--lg"
                 href="/download_windows">
-                Download Now
+                Unduh Sekarang
               </a>
               <a
                 className="button button--outline button--lg"
                 href="/intro">
-                Get Started
+                Memulai
               </a>
             </div>
           </div>
@@ -45,18 +45,18 @@ export default function Home() {
             <div className="row">
               <FeatureCard 
                 icon="⚡" 
-                title="Lightning Fast"
-                description="Our tools work in seconds without bloatware"
+                title="Secepat Kilat"
+                description="Alat kami bekerja dalam hitungan detik tanpa bloatware"
               />
               <FeatureCard 
                 icon="🔒" 
-                title="100% Secure"
-                description="No telemetry, no data collection"
+                title="100% Aman"
+                description="Tidak ada telemetri, tidak ada pengumpulan data"
               />
               <FeatureCard 
                 icon="🔄" 
-                title="Completely Free"
-                description="Free forever with open-source code"
+                title="Sepenuhnya Gratis"
+                description="FGratis selamanya dengan kode sumber terbuka"
               />
             </div>
           </div>
@@ -71,19 +71,19 @@ export default function Home() {
                 title="Windows Activator" 
                 href="/microsoft_activation"
                 icon="🪟"
-                description="Activate Windows 10/11 instantly"
+                description="Aktifkan Windows 10/11 secara instan"
               />
               <ToolCard 
                 title="Office Toolkit" 
                 href="/office_c2r_links"
                 icon="📊"
-                description="Complete Office activation solution"
+                description="Solusi aktivasi Office lengkap"
               />
               <ToolCard 
-                title="Troubleshooting" 
+                title="Penyelesaian Masalah" 
                 href="/troubleshoot"
                 icon="🔧"
-                description="Common issues and solutions"
+                description="Masalah umum dan solusinya"
               />
             </div>
           </div>
