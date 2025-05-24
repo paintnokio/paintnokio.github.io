@@ -62,7 +62,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/logo.png',
       navbar: {
-        title: '',
+        title: 'devcomp.fun',
         logo: {
           alt: 'DevComp.fun',
           src: 'img/logo.svg',

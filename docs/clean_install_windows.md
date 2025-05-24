@@ -6,7 +6,7 @@ Panduan tentang cara mencadangkan data dan menginstal ulang Windows.
 
 ## Prasyarat
 
-- File ISO Windows asli, Anda dapat mengunduhnya dari https://paintnokio.github.io/microsoft-download-list/
+- File ISO Windows asli, Anda dapat mengunduhnya dari https://devcomp.fun/microsoft-download-list/
 - Versi terbaru Rufus dari https://rufus.ie/
 - Drive USB minimal 8GB 
 - Ikuti [panduan] ini(remove_malware.md) sebelum membuat USB yang dapat di-boot jika Anda merasa sistem tersebut terkena malware.

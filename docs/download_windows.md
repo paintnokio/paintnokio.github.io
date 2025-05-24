@@ -5,7 +5,7 @@ sidebar_label: Software
 # 📂 Daftar Software Lengkap
 
 ## 🖥️ Sistem Operasi
-- [Windows](https://paintnokio.github.io/microsoft-download-list/) ❤️ (All Versi ISO)
+- [Windows](https://msdl.devcomp.fun/) ❤️ (All Versi ISO)
 - [macOS](#) **Coming Soon** (Hackintosh/VM)
 - [Linux](#) **Coming Soon** (Distro Populer)
 - [iOS](#) **Coming Soon** (Jailbreak Tools)
