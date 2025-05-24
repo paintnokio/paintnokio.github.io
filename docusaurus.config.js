@@ -65,7 +65,7 @@ const config = {
         title: '',
         logo: {
           alt: 'DevComp.fun',
-          src: 'img/logo.png',
+          src: 'img/logo.svg',
         },
         items: [
           {
