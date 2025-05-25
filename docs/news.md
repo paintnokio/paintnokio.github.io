@@ -35,5 +35,5 @@ https://devcomp.fun/msdl
 ### [10-Mar-24] paintnokio-site repo dibuat
 https://devcomp.fun/gravesoft-site
 
-### [29-Feb-24] paintnokio org dibuat on Github
+### [29-Feb-24] devcomp.fun org dibuat on Github
 https://devcomp.fun/

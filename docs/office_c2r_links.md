@@ -1,62 +1,91 @@
-# Office C2R Installers
+# Penginstal Office C2R
 
-All of the below listed links are original from Microsoft with Retail license and Current update channel.
+Semua tautan di bawah ini bersumber resmi dari Microsoft dengan lisensi Retail dan saluran pembaruan terkini.
 
-#### General Notes
+#### Catatan Penting
 
 <details>
-<summary>Click here for info</summary>
+<summary>📌 Klik untuk informasi lengkap</summary>
 
--   Microsoft publishes updates in these same links, which means there isn't any need to update the links.
--   **File size:** C2R office installer files are unified. It means that for example, Office 2021 ProPlus, Excel, and OneNote, will all have the same size. Online installer consumes less data because it downloads files for only one system architecture whereas Offline file contain both architectures.
--   **File version:** Online installer always installs the latest Office version whereas the Offline version is often 5-6 months old and Office will need updates once installed.
--   **Advanced users:** If you want to customize your Office installation or want pure Volume installation, use this [ODT method](office_c2r_custom.md) of Office installation.
--	[Language Pack for Office](https://support.microsoft.com/en-us/office/language-accessory-pack-for-microsoft-365-82ee1236-0f9a-45ee-9c72-05b026ee809f)
+- **Pembaruan Otomatis**: Microsoft selalu memperbarui file melalui tautan yang sama, jadi Anda tidak perlu mencari tautan baru
+- **Ukuran File**:
+  - Semua versi C2R memiliki ukuran file seragam (ProPlus, Excel, OneNote, dll)
+  - *Online Installer*:
+    - Lebih hemat kuota (hanya mengunduh 1 arsitektur)
+    - Ukuran sekitar 2-3MB
+  - *Offline Installer*:
+    - Berisi kedua arsitektur (x86 & x64)
+    - Ukuran sekitar 5-6GB
+
+- **Versi Aplikasi**:
+  - ✔️ *Online*: Selalu versi terbaru
+  - ⏳ *Offline*: Versi 5-6 bulan lebih tua (perlu update setelah instalasi)
+
+- **Untuk Pengguna Lanjut**:
+  - Custom instalasi: [Metode ODT](office_c2r_custom.md)
+  - Paket bahasa: [Language Pack for Office](https://support.microsoft.com/en-us/office/language-accessory-pack-for-microsoft-365-82ee1236-0f9a-45ee-9c72-05b026ee809f)
+  - Instalasi Volume murni (lihat panduan khusus)
 
 </details>
 
-#### Which Office Product is Best?
+#### Office Mana yang Terbaik?
 
 <details>
-<summary>Click here for info</summary>
+<summary>📊 Klik untuk informasi perbandingan</summary>
 
-**Microsoft 365** is superior to Office 2024 because it includes following features that are only available with 365.
-- Designer in PowerPoint 
-- Microsoft Editor in Word
-- Latest Formulas in Excel
-- Premium Fonts & Icons
-- Accessibility Enhancements
+**Microsoft 365** lebih unggul dibanding Office 2024 karena menyertakan fitur-fitur eksklusif berikut:
+- 🎨 **Designer** di PowerPoint
+- ✍️ **Microsoft Editor** di Word
+- 📈 **Formula terbaru** di Excel
+- 🖋️ **Font & Ikon Premium**
+- ♿ **Peningkatan aksesibilitas**
 
-Microsoft 365 receive regular updates with new features and improvements across all applications. In contrast, Office 2024 only receives security updates without new feature additions. 
+**Perbedaan Pembaruan:**
+- 🔄 **Microsoft 365**: 
+  - Mendapat pembaruan fitur rutin
+  - Penyempurnaan aplikasi secara berkala
+- 🔒 **Office 2024**:
+  - Hanya menerima pembaruan keamanan
+  - Tidak ada penambahan fitur baru
 
 </details>
 
-#### Error in Office Installation
+#### Masalah Instalasi Office
 
 <details>
-<summary>Click here for info</summary>
+<summary>🛠️ Klik untuk solusi troubleshooting</summary>
 
-- If Office installation is showing that it **can't install on selected updated channel** or there's any other error then,
-	- [Download Office Scrubber](https://github.com/abbodi1406/WHD/raw/master/scripts/OfficeScrubber_13.zip)
-	- Extract the downloaded zip file
-	- Run `OfficeScrubber.cmd` file as admin and select Scrub ALL option
-	- Let the process complete, it may take 10-15 minutes.
-- If Office installation is still showing error then try Offline installer file.
+**Jika muncul error "tidak bisa instal di channel update yang dipilih" atau error lainnya:**
+
+1. **Bersihkan instalasi lama**:
+   - [Unduh Office Scrubber](https://github.com/abbodi1406/WHD/raw/master/scripts/OfficeScrubber_13.zip)
+   - Ekstrak file ZIP yang diunduh
+   - Jalankan `OfficeScrubber.cmd` sebagai Admin
+   - Pilih opsi **Scrub ALL**
+   - Tunggu proses selesai (10-15 menit)
+
+2. **Jika error masih muncul**:
+   - Gunakan versi **offline installer**
+   - Pastikan arsitektur (32/64-bit) sesuai
 
 ---
 
-**Russian** users need to follow [this guide](bypass-russian-geoblock.md) to bypass geoblock in Office downloading.
+**Pengguna Rusia**:
+- Ikuti [panduan ini](bypass-russian-geoblock.md) untuk melewati pemblokiran geografis saat mengunduh Office
 
 </details>
 
 :::info
 
--	On **Windows 7 and 8.1**, use the Office 2016 Offline file to install Office. Newer versions of Office are not supported on older operating systems.
-- 	On **Windows 10/11 ARM64**, if online installer isn't working then use the offline file to install Office.
--	O365 provides the most and latest features. If you want more apps, choose **O365ProPlusRetail**, and if you want fewer apps, use **O365AppsBasicRetail**.
+- Untuk **Windows 7 dan 8.1**, gunakan file Office 2016 Offline untuk menginstal Office. Versi Office yang lebih baru tidak didukung di sistem operasi lawas ini.
+  
+- Di **Windows 10/11 ARM64**, jika penginstal online tidak bekerja, gunakan file offline untuk menginstal Office.
+
+- O365 menyediakan fitur terlengkap dan terbaru. Jika Anda ingin lebih banyak aplikasi, pilih **O365ProPlusRetail**, dan jika ingin lebih sedikit aplikasi, gunakan **O365AppsBasicRetail**.
+
 :::
 
--   **Need help?** Check [here](troubleshoot.md).
+- **Butuh bantuan?** Periksa [di sini](troubleshoot.md).
 
 ------------------------------------------------------------------------
 
@@ -178,7 +207,7 @@ import TabItem from '@theme/TabItem';
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -332,7 +361,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -486,7 +515,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -640,7 +669,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -794,7 +823,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -948,7 +977,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -1102,7 +1131,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -1256,7 +1285,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -1410,7 +1439,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -1564,7 +1593,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -1718,7 +1747,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -1872,7 +1901,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2026,7 +2055,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Instalasi Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2180,7 +2209,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2334,7 +2363,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2488,7 +2517,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2642,7 +2671,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2796,7 +2825,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -2950,7 +2979,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -3104,7 +3133,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -3258,7 +3287,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -3412,7 +3441,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -3566,7 +3595,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -3720,7 +3749,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -3874,7 +3903,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4028,7 +4057,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4182,7 +4211,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4336,7 +4365,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4490,7 +4519,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4644,7 +4673,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4798,7 +4827,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -4952,7 +4981,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -5106,7 +5135,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -5260,7 +5289,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -5414,7 +5443,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -5568,7 +5597,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -5722,7 +5751,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -5876,7 +5905,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -6030,7 +6059,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -6184,7 +6213,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -6338,7 +6367,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -6492,7 +6521,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -6646,7 +6675,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 
@@ -6800,7 +6829,7 @@ Office 2013 installation from Offline installer cannot be updated. Use online in
 
 :::warning
 
-Office 2013 installation from Offline installer cannot be updated. Use online installer.
+Penginstalan Office 2013 dari penginstal Offline tidak dapat diperbarui. Gunakan penginstal online.
 
 :::
 

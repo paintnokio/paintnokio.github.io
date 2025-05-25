@@ -203,12 +203,45 @@ table {
 }
 
 /* src/css/custom.css */
+.menu__link[href*="office_for_mac"]::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/icons/officeformac.svg");
+  background-size: contain;
+  margin-right: 8px;
+}
+
+/* src/css/custom.css */
+.menu__link[href*="oem_folder"]::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/icons/oem.svg");
+  background-size: contain;
+  margin-right: 8px;
+}
+
+/* src/css/custom.css */
 .menu__link[href*="download_windows"]::before {
   content: "";
   display: inline-block;
   width: 20px;
   height: 20px;
   background-image: url("/img/icons/download.svg");
+  background-size: contain;
+  margin-right: 8px;
+}
+
+/* src/css/custom.css */
+.menu__link[href*="command_line_switches"]::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/icons/commandline.svg");
   background-size: contain;
   margin-right: 8px;
 }

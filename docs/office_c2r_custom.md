@@ -1,88 +1,84 @@
 # Office C2R Custom Install
 
-## Notes
+## Catatan
 
--   If the below guide is confusing to you then the simplest option for you is to use [Office C2R Installer](office_c2r_links.md).
--   Retail Office (e.g. O365) has latest feature updates and Volume Office (e.g. ProPlus 2024) doesn't.
--   Please note that in the official C2R office custom installation method, there is no ISO or any one-click solution available. Below is the simplest guide to installing customized office.
+- Jika panduan di bawah membingungkan, opsi termudah adalah menggunakan [Office C2R Installer](office_c2r_links.md).
+- Office Retail (contoh: O365) memiliki pembaruan fitur terbaru sedangkan Office Volume (contoh: ProPlus 2024) tidak.
+- Perlu diketahui bahwa dalam metode instalasi custom Office C2R resmi, tidak tersedia ISO atau solusi satu-klik. Berikut panduan paling sederhana untuk instalasi Office yang dikustomisasi.
 
-:::tip
-
--   Russian users needs to follow [this guide](bypass-russian-geoblock.md) to bypass geoblock in Office downloading.
+- Pengguna Rusia perlu mengikuti [panduan ini](bypass-russian-geoblock.md) untuk melewati pemblokiran geografis saat mengunduh Office.
 
 :::
 
-------------------------------------------------------------------------
+---
 
-## Custom Installation Guide
+## Panduan Instalasi Custom
 
--   If Office was ever installed before,
-	- Uninstall Office with the App and Features option in Windows settings.
-	- Run `OfficeScrubber.cmd` file from [Office Scrubber](https://github.com/abbodi1406/WHD/raw/master/scripts/OfficeScrubber_13.zip) by abbodi1406 and select `[R] Remove all Licenses` option.
--   Create a new folder named `Office` in `C:\` drive, example `C:\Office`
--   Download [Office Deployment Tool](https://officecdn.microsoft.com/pr/wsus/setup.exe) (ODT)
--   Copy the downloaded `setup.exe` file to that Office folder which you created, example `C:\Office\setup.exe`
--   Go to [config.office.com](https://config.office.com/deploymentsettings)
--   If you want Retail Office then select `Microsoft 365 Apps for enterprise` in the office suites section.
--   If you want Volume Office then select `Office LTSC Professional Plus 2024 - Volume License` in the office suites section. (Don't select the SPLA version)
--   You can add Visio and Project apps if you need them, but ensure that [Project](https://learn.microsoft.com/en-us/projectonline/supported-languages-for-project-online) / [Visio](https://support.microsoft.com/en-us/office/display-languages-supported-in-the-visio-desktop-app-a921983e-fd5d-45ef-8af1-cedf70c53d75) supported language is selected.
--   If you are planning to download Office files and install them later, then ensure that you select a specific version number instead of the latest in the `Select the version` option.
--   You need to configure the options till "Language" section only. You can leave the rest as default.
--   Click on the export button, select "Keep Current Settings" option and it will download a file named `Configuration.xml` (If the name is something else then change it to `Configuration.xml`
--   Copy the downloaded `Configuration.xml` file to that Office folder which you created, example `C:\Office\Configuration.xml`
+- Jika Office pernah terinstal sebelumnya:
+  - Uninstall Office melalui fitur Apps & Features di pengaturan Windows.
+  - Jalankan file `OfficeScrubber.cmd` dari [Office Scrubber](https://github.com/abbodi1406/WHD/raw/master/scripts/OfficeScrubber_13.zip) oleh abbodi1406 dan pilih opsi `[R] Remove all Licenses`.
+- Buat folder baru bernama `Office` di drive `C:\`, contoh: `C:\Office`
+- Unduh [Office Deployment Tool](https://officecdn.microsoft.com/pr/wsus/setup.exe) (ODT)
+- Salin file `setup.exe` yang diunduh ke folder Office tadi, contoh: `C:\Office\setup.exe`
+- Kunjungi [config.office.com](https://config.office.com/deploymentsettings)
+  - Untuk Office Retail, pilih `Microsoft 365 Apps for enterprise` di bagian office suites.
+  - Untuk Office Volume, pilih `Office LTSC Professional Plus 2024 - Volume License` (jangan pilih versi SPLA).
+- Anda bisa menambahkan Visio dan Project jika diperlukan, pastikan bahasa yang didukung untuk [Project](https://learn.microsoft.com/en-us/projectonline/supported-languages-for-project-online) dan [Visio](https://support.microsoft.com/en-us/office/display-languages-supported-in-the-visio-desktop-app-a921983e-fd5d-45ef-8af1-cedf70c53d75) dipilih.
+- Jika ingin mengunduh file Office untuk diinstal nanti, pastikan memilih nomor versi spesifik (bukan 'latest') di opsi `Select the version`.
+- Hanya perlu mengkonfigurasi hingga bagian "Language". Sisanya bisa dibiarkan default.
+- Klik tombol export, pilih "Keep Current Settings" untuk mengunduh file `Configuration.xml` (jika namanya berbeda, ubah menjadi `Configuration.xml`).
+- Salin file `Configuration.xml` ke folder Office tadi, contoh: `C:\Office\Configuration.xml`
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="direct_install" label="Direct Install" default>
+<TabItem value="direct_install" label="Instal Langsung" default>
 
--   Open the **command prompt** (not Powershell) **as admin** and run the below commands  
-    ```         
+📌 Buka **command prompt** (bukan Powershell) **sebagai admin** dan jalankan perintah:
+  ```cmd
     cd /d C:\Office\
     setup.exe /configure Configuration.xml
-    ```
-
-It will now install Office.
+  ```
+⚠️ Sekarang akan menginstal Office.
 
 </TabItem>
 
-<TabItem value="download_and_install" label="Download and then install" default>
+<TabItem value="download_and_install" label="Unduh lalu Instal" default>
 
--	Ensure that you have selected a specific version number in the configuration as per the above steps.
--   Open the **command prompt** (not Powershell) **as admin** and run the below commands  
-	- Download Office files
-    ```         
+💡 Pastikan Anda telah memilih nomor versi tertentu dalam konfigurasi sesuai langkah-langkah di atas.
+
+📌 Buka **command prompt** (bukan Powershell) **sebagai admin** dan jalankan perintah di bawah ini Unduh file Office
+  ```cmd
     cd /d C:\Office\
     setup.exe /download Configuration.xml
-    ```
-	- Install Office from the downloaded Office files (can be done Offline)
-	```
-	cd /d C:\Office\
-    setup.exe /configure Configuration.xml
-    ```
+  ```
+
+🔧 Untuk menginstal dari file yang telah diunduh (bisa dilakukan offline):
+ ```cmd
+ cd /d C:\Office\
+ setup.exe /configure Configuration.xml
+ ```
 
 </TabItem>
 </Tabs>
 
 ---
 
-:::tip[Common errors]
-
-- Make sure you are entering those commands in command prompt (CMD) as admin.
-- File name extensions are hidden by default in Windows. Due to that, some people might incorrectly rename `Configuration.xml` to `Configuration.xml.xml` because `.xml` was not visible.
-
+:::tip[Error umum] 
+* Pastikan menjalankan perintah di command prompt (CMD) sebagai admin. 
+* Ekstensi file sering tersembunyi di Windows, sehingga beberapa orang mungkin salah memberi nama `Configuration.xml.xml` karena `.xml` tidak terlihat. 
 :::
 
 ------------------------------------------------------------------------
 
-## Alternative Methods
+## Metode Alternatif
 
--   [YAOCTRU](https://github.com/abbodi1406/WHD/raw/master/scripts/YAOCTRU_v10.0.zip) (Office Downloader) & [YAOCTRI](https://github.com/abbodi1406/WHD/raw/master/scripts/YAOCTRI_v11.1.zip) (Office Installer)
+-   [YAOCTRU](https://github.com/abbodi1406/WHD/raw/master/scripts/YAOCTRU_v10.0.zip) (Pengunduh Office) & [YAOCTRI](https://github.com/abbodi1406/WHD/raw/master/scripts/YAOCTRI_v11.1.zip) (Pemasang Office)
 -   [Office Tool Plus](http://otp.landian.vip/)
 
 ------------------------------------------------------------------------
 
-## Need help?
+## Butuh bantuan?
 
--   Check [here](troubleshoot.md).
+-   Cek [disini](troubleshoot.md).

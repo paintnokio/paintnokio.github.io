@@ -1,46 +1,70 @@
-# In-place Repair Upgrade
-
-(Keeping files and apps)
+# Perbaikan Sistem
+*(Menyimpan file dan aplikasi)*
 
 ---
 
-In-place repair upgrade using Windows ISO file is a good way to fix system errors. Here's how you can perform it.
+## 📌 Cara Melakukan In-Place Repair Upgrade
+Metode ini menggunakan file ISO Windows untuk memperbaiki error sistem tanpa menghapus data pribadi.
 
--   Download the Windows ISO, preferably from [MSDL](https://msdl.devcomp.fun/) in the **same Windows language, and architecture**.
-    -   To check the installed Windows architecture, open Powershell as admin and enter,  
-        ```
-		(Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment").PROCESSOR_ARCHITECTURE
-		```
-        AMD64/x64 means 64 Bit, x86 means 32 Bit
-    -   To check the installed Windows Language, enter this command,  
-        ```
-		dism /english /online /get-intl | find /i "Default system UI language"
-		```
-		Alternatively, you can use this command,  
-		```
-		[Globalization.CultureInfo]::GetCultureInfo([Convert]::ToInt32((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Nls\Language").InstallLanguage, 16)).Name
-		```
-    -   Note: If you are running the Enterprise LTSC edition, you will need to download that edition's ISO file. Don't download Evaluation version, that can't be activated.
--   Right-click on the downloaded ISO file, Open With > Windows Explorer
--   A new DVD drive will appear in Windows Explorer, which means the installation image has been mounted successfully.
+### 🔧 Langkah-Langkah:
+
+1. **Unduh ISO Windows**  
+   - Rekomendasi sumber: [MSDL](https://msdl.devcomp.fun/)
+   - Pastikan memilih:
+     - **Versi bahasa** yang sama dengan sistem saat ini
+     - **Arsitektur** (32-bit/64-bit) yang sesuai
+
+2. **Cek Spesifikasi Sistem**  
+   - **Arsitektur**: Buka PowerShell sebagai Admin, jalankan:
+     ```powershell
+     (Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment").PROCESSOR_ARCHITECTURE
+     ```
+     - `AMD64/x64` = 64-bit | `x86` = 32-bit
+
+   - **Bahasa Sistem**: Jalankan salah satu perintah:
+     ```cmd
+     dism /english /online /get-intl | find /i "Default system UI language"
+     ```
+     **ATAU**
+     ```powershell
+     [Globalization.CultureInfo]::GetCultureInfo([Convert::ToInt32((Get-ItemProperty "HKLM:\SYSTEM\CurrentControlSet\Control\Nls\Language").InstallLanguage, 16)).Name
+     ```
+
+   ⚠️ Catatan:  
+   - Untuk edisi **Enterprise LTSC**, gunakan ISO khusus edisi tersebut
+   - Hindari versi **Evaluation** (tidak bisa diaktivasi)
+
+3. **Mount ISO**  
+   - Klik kanan file ISO > **Open With** > Windows Explorer
+   - Drive virtual DVD akan muncul jika berhasil
+
 <details>
-  <summary>Click here for info: Windows 11 on Unsupported Hardware</summary>
-- If you're using Windows 11 or upgrading from Windows 10, you may encounter errors due to unsupported hardware.
-- To resolve this, you need to install IoT Enterprise 24H2 (2024) edition which is [officially supported](https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/Hardware/System_Requirements?tabs=Windows11LTSC#optional-minimum-requirements) on unsupported hardware. 
-  - To do that, open the command prompt as admin and,
-  - Enter the below command if you are using normal Windows 11 24H2 ISO  
-`reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID /d IoTEnterprise /f`
-  - Enter the below command if you are using Windows 11 LTSC 2024 ISO  
-`reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID /d IoTEnterpriseS /f`
-- Now quickly run setup.exe as described below.
+  <summary>🔧 Solusi untuk Windows 11 di Hardware Tidak Didukung</summary>
+
+  Jika mengalami error karena hardware tidak memenuhi syarat:
+  1. Gunakan edisi **IoT Enterprise 24H2 (2024)** yang [resmi didukung](https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/Hardware/System_Requirements?tabs=Windows11LTSC#optional-minimum-requirements)
+  2. Buka Command Prompt sebagai Admin
+  3. Sesuaikan perintah dengan ISO yang digunakan:
+     - Untuk Windows 11 24H2 biasa:
+       ```cmd
+       reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID /d IoTEnterprise /f
+       ```
+     - Untuk Windows 11 LTSC 2024:
+       ```cmd
+       reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v EditionID /d IoTEnterpriseS /f
+       ```
+  4. Segera jalankan setup.exe setelahnya
 </details>
--   Go into that DVD drive and run setup.exe, just continue until you reach the final confirmation screen.
--   Make sure it says "**Keep personal files and apps**" on the final screen. Then you can continue the process and wait until it is done.
+
+4. **Jalankan Setup**  
+   - Buka drive virtual > jalankan **setup.exe**
+   - Pastikan di layar konfirmasi terakhir tertulis:  
+     **"Keep personal files and apps"**
+   - Lanjutkan proses dan tunggu hingga selesai
 
 ---
 
-:::tip
-
--   If you are not getting the option to keep files and apps, or the setup is showing any error, you can [connect with us](troubleshoot.md) for help.
-
+:::tip 💡 Tips Penting
+- Jika tidak ada opsi "Keep files and apps" atau muncul error,  
+  [hubungi kami](troubleshoot.md) untuk bantuan
 :::

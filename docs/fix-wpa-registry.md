@@ -1,28 +1,44 @@
-# Fix WPA Registry
+# Perbaiki Registry WPA
 
--   In some cases, the system may have corrupt WPA registry keys at `HKEY_LOCAL_MACHINE\SYSTEM\WPA` which can cause `sppsvc` to not work and activation to fail, it can also cause high CPU usage in `sppsvc` service.
--   If you are not sure whether you need to do it or not, you can get help from [here](troubleshoot.md).
--   This registry key is protected by the kernel and cannot be deleted normally. That is why we need to follow some more steps below to clear it.
+- Dalam beberapa kasus, sistem mungkin memiliki kunci registry WPA yang rusak di `HKEY_LOCAL_MACHINE\SYSTEM\WPA` yang dapat menyebabkan:
+  - Layanan `sppsvc` tidak berfungsi
+  - Gagal aktivasi Windows
+  - Penggunaan CPU tinggi oleh layanan `sppsvc`
+- Jika Anda tidak yakin perlu melakukan ini atau tidak, bisa minta bantuan [di sini](troubleshoot.md).
+- Kunci registry ini dilindungi kernel dan tidak bisa dihapus secara normal, sehingga perlu langkah khusus berikut.
 
-------------------------------------------------------------------------
+---
 
-## Steps To Fix WPA Registry
+## Langkah Memperbaiki Registry WPA
 
--   Download https://github.com/asdcorp/rearm/archive/refs/heads/principalis.zip
--   Extract this zip file.
--   Copy `rearm.cmd` file to the root of the C drive, like `C:\rearm.cmd`
--   Open the command prompt as administrator and enter the below command  
-    `Shutdown /f /r /o /t 0`
--   After the system restarts, select Troubleshoot > Advanced Options > Command Prompt.
--   Enter the following command  
+1. **Unduh File Perbaikan**:  
+   [https://github.com/asdcorp/rearm/archive/refs/heads/principalis.zip](https://github.com/asdcorp/rearm/archive/refs/heads/principalis.zip)
+
+2. **Ekstrak file ZIP** yang telah diunduh.
+
+3. **Salin file `rearm.cmd`** ke root drive C:  
+   (Contoh: `C:\rearm.cmd`)
+
+4. **Buka Command Prompt sebagai Admin**, lalu jalankan:  
+   ```cmd
+   Shutdown /f /r /o /t 0
+
+5. **Setelah restart**, pilih Troubleshoot > Advanced Options > Command Prompt.
+
+6. **Jalankan perintah**  
     `C:\rearm.cmd`
--   If it says the command is not recognized, enter  
+    - Jika muncul error "command is not recognized", cek drive OS dengan:
     `bcdedit | find "osdevice"`
--   It will show you the OS drive letter. Use that drive letter in the command, for example,  
+    - Gunakan huruf drive yang ditampilkan Contoh,  
     `E:\rearm.cmd`
--   Wait for it to finish. When it's finished, you will be able to type in the command prompt, If not then wait.
--   Once done, exit and then normally boot into Windows.
--   If it doesn't help, you can [connect with us](troubleshoot.md) for help.
+
+7. **Tunggu proses selesai**:
+    - Jika command prompt bisa digunakan lagi, artinya proses selesai
+    - Jika belum, tunggu beberapa saat
+
+8. Keluar dan boot Windows seperti biasa
+
+9. Jika masih bermasalah, [hubungi kami](troubleshoot.md) untuk bantuan lebih lanjut.
 
 ------------------------------------------------------------------------
 

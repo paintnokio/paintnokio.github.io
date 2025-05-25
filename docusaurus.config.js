@@ -71,22 +71,22 @@ const config = {
           {
             to: '/cas',
             position: 'left',
-            label: 'Our Software',
+            label: 'Produk Kami',
           },
           {
             to: '/download_windows',
             position: 'left',
-            label: 'Download Windows / Office',
+            label: 'Unduhan Windows / Office',
           },
           {
             to: '/bypass-russian-geoblock',
             position: 'left',
-            label: 'Guides',
+            label: 'Panduan',
           },
           {
             to: '/news',
             position: 'left',
-            label: 'News',
+            label: 'Berita',
           },
           {
             to: '/credits',

@@ -1,64 +1,64 @@
-# Check Activation Status
+# Cek Status Aktivasi
 
-A robust Windows Powershell script to display the licensing status of Microsoft Windows and Office.
+Sebuah skrip Windows Powershell yang kuat untuk menampilkan status lisensi Microsoft Windows dan Office.
 
-**Author:** [abbodi1406](https://github.com/abbodi1406)  
-**Github Repo:** https://devcomp.fun/CAS
+**Pembuat:** [abbodi1406](https://github.com/abbodi1406)  
+**Repositori Github:** https://github.com/paintnokio/CAS
 
 ---
 
-How to use it
--------------
+Cara Menggunakan
+---------------
 
-- Go to the [Github repo](https://devcomp.fun/CAS).
-- Download the ZIP file by clicking on the "Code" button and selecting "Download ZIP".
-- Extract the ZIP file to a preferred location on your computer.
-- Run the cmd_launcher.cmd file located in the extracted folder.
+1. Kunjungi [Repositori Github](https://devcomp.fun/CAS)
+2. Unduh file ZIP dengan mengklik tombol "Code" lalu pilih "Download ZIP"
+3. Ekstrak file ZIP ke lokasi yang diinginkan di komputer Anda
+4. Jalankan file cmd_launcher.cmd yang ada di folder hasil ekstraksi
 
-Supported products
-------------------
+Produk yang Didukung
+-------------------
 
-- Windows Vista and later / Windows Server 2008 and later.
-- Office 2010 and later (MSI or C2R), installed on Windows XP and later.
-- Office UWP apps on Windows 10/11.
-- Windows and Office KMS Host (CSVLK), installed on Windows Server 2003 and later.
+- Windows Vista dan versi lebih baru / Windows Server 2008 dan versi lebih baru
+- Office 2010 dan versi lebih baru (MSI atau C2R), terinstal di Windows XP dan versi lebih baru
+- Aplikasi Office UWP di Windows 10/11
+- Host KMS Windows dan Office (CSVLK), terinstal di Windows Server 2003 dan versi lebih baru
 
-Features
---------
-
-- Require Windows Powershell 2.0 at minimum
-- Practical replacement for **slmgr.vbs** functions `/dli` `/dlv` `xpr`
-- Shows the activation expiration date for supported products
-- Shows the `ProductKeyChannel` for Windows Vista / 7 / 8 primary installed key (available for uplevel Windows by default)
-- Shows the status of add-on licenses (Extended Security Updates, APPXLOB, OCUR..., etc)
-- Shows the status of Active Directory Volume Activation for Windows 8 and later
-- Shows the status of Automatic VM Activation for Windows Server 2012 and later
-- Shows the status of Subscription Activation for Windows 11 24H2 and later
-- Implement **vNextDiag.ps1** functions to detect Office vNext licenses (subscription or lifetime)
-- Implement <a href="https://github.com/asdcorp/clic" target="_blank">Client Licensing Check</a> tool for Windows 8 and later
-
-Check-Activation-Status.ps1 advantages
---------------------------------------
-
-- Faster PInvoke native methods imports from Software Licensing Client Dll.
-- Shows more info for all supported Windows and Office versions.
-- Implements "Client Licensing Check" for Windows 7 and Vista.
-
-Parameters
+Fitur Utama
 ----------
 
-|Switch |Effect|
+- Memerlukan Windows Powershell 2.0 minimal
+- Pengganti praktis untuk fungsi **slmgr.vbs** `/dli` `/dlv` `xpr`
+- Menampilkan tanggal kedaluwarsa aktivasi untuk produk yang didukung
+- Menampilkan `ProductKeyChannel` untuk kunci utama Windows Vista/7/8
+- Menampilkan status lisensi tambahan (Extended Security Updates, APPXLOB, OCUR, dll)
+- Menampilkan status Volume Activation Active Directory untuk Windows 8+
+- Menampilkan status Automatic VM Activation untuk Windows Server 2012+
+- Menampilkan status Subscription Activation untuk Windows 11 24H2+
+- Mengimplementasikan fungsi **vNextDiag.ps1** untuk mendeteksi lisensi Office vNext
+- Mengimplementasikan tool [Client Licensing Check](https://github.com/asdcorp/clic) untuk Windows 8+
+
+Keunggulan Check-Activation-Status.ps1
+--------------------------------------
+
+- Lebih cepat dengan metode PInvoke native dari Software Licensing Client Dll
+- Menampilkan lebih banyak info untuk semua versi Windows dan Office yang didukung
+- Mendukung "Client Licensing Check" untuk Windows 7 dan Vista
+
+Parameter
+---------
+
+|Switch |Fungsi|
 |-------|------|
-| -IID  | Show Offline Installation ID |
-| -Dlv  | Show IID, Rearm count, Trusted time, Product ID.. if available |
-| -All  | Show status for all IDs, regardless installed keys |
-| -Pass | Skip end prompt or clearing window buffer with All switch |
+| -IID  | Tampilkan Offline Installation ID |
+| -Dlv  | Tampilkan IID, hitungan Rearm, Trusted time, Product ID (jika tersedia) |
+| -All  | Tampilkan status untuk semua ID |
+| -Pass | Lewati prompt akhir atau pembersihan buffer window |
 
-Unsupported
------------
+Tidak Didukung
+-------------
 
-Status of Token-based Volume Licensing.
+Status Volume Licensing berbasis Token.
 
-License
+Lisensi
 -------
-The project is licensed under the terms of the MIT License.
+Projek ini dilisensikan di bawah MIT License.

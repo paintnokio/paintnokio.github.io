@@ -22,21 +22,21 @@ const sidebars = {
     'intro',
     {
       type: 'category',
-      label: 'Our Software',
+      label: 'Produk Kami',
       items: ['cas'],
       collapsed: false,
       
     },
     {
       type: 'category',
-      label: 'Download Windows / Office',
-      items: ['download_windows', 'microsoft_activation', 'office_c2r_links', 'office_c2r_custom'],
+      label: 'Unduh Windows / Office',
+      items: ['download_windows', 'microsoft_activation', 'office_c2r_links', 'office_c2r_custom', 'office_for_mac', 'oem_folder'],
       collapsed: false,
     },
     {
       type: 'category',
-      label: 'Guides',
-      items: ['bypass-russian-geoblock', 'in-place_repair_upgrade', 'fix-wpa-registry', 'fix_powershell', 'remove_malware', 'clean_install_windows'],
+      label: 'Bantuan & Info',
+      items: ['command_line_switches', 'bypass-russian-geoblock', 'in-place_repair_upgrade', 'fix-wpa-registry', 'fix_powershell', 'remove_malware', 'clean_install_windows'],
       collapsed: false,
     },
     'news',

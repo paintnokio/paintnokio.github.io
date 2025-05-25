@@ -1,137 +1,139 @@
-# Microsoft Activation
+# Aktivasi Microsoft
 
-Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.
+Aktivator Windows dan Office open-source dengan berbagai metode aktivasi termasuk HWID, Ohook, TSforge, KMS38, dan Online KMS, dilengkapi fitur troubleshooting lanjutan.
 
 ---
 
-### How to Activate Windows / Office?
+## Cara Mengaktivasi Windows/Office
 
-#### Method 1 - PowerShell (Windows 8 and later) ❤️
+### Metode 1 - PowerShell (Windows 8 dan yang lebih baru) ❤️
 
 :::info
 
-1.   **Open PowerShell**  
-	To do that, press the Windows key + X, then select PowerShell or Terminal.
+1. **Buka PowerShell sebagai Administrator**
+   - Tekan `Win + X`
+   - Pilih "Windows PowerShell (Admin)"
 
-2.   **Copy and paste the code below, then press enter.**  
-```
-irm https://get.activated.win | iex
-```
-Alternatively, you can use the following (this will be deprecated in the future):  
-```
-irm https://massgrave.dev/get | iex
-```
+2. **Jalankan perintah berikut:**
+   ```powershell
+   irm https://get.activated.win | iex
 
-3. You will see the activation options.  
-	 Press [1] HWID for Windows activation.  
-   Press [2] Ohook for Office activation.
+Atau alternatif (akan dihentikan di masa depan):
+  ```powershell
+    irm https://massgrave.dev/get | iex
+  ```
 
-4. That's all
+3. Pilih metode aktivas  
+    - Tekan [1] untuk aktivasi Windows (HWID).  
+    - Tekan [2] untuk aktivasi Office (Ohook).
+
+4. Tunggu proses selesai
 
 :::
 
-#### Method 2 - Traditional (Windows Vista and later)
+#### Metode 2 - Manual (Windows Vista dan yang lebih baru)
 
 <details>
-  <summary>Click here to view</summary>
+  <summary>Klik di sini untuk melihat</summary>
   
-1.   Download the file using one of the links below:  
+1. Unduh file aktivasi:
+  - Pilih salah satu link:
 `https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip`  
-or  
+atau
 `https://git.activated.win/massgrave/Microsoft-Activation-Scripts/archive/master.zip`
-2.   Right-click on the downloaded zip file and extract it.
-3.   In the extracted folder, find the folder named `All-In-One-Version`.
-4.   Run the file named `MAS_AIO.cmd`.
-5.   You will see the activation options. Follow the on-screen instructions.
-6.   That's all.
+2. Extrak file ZIP yang di unduh.
+  - Pada folder hasil ekstraksi, cari folder bernama `All-In-One-Version`.
+4. Jalankan file `MAS_AIO.cmd`.
+  - klik kanan → "Run as administrator".
+5. Ikuti petunjuk di layar.
 
 </details>
 
 ---
 
-- **[Office for macOS](#)**  
-- To run the scripts in unattended mode, check [here](#).
+- **[Office untuk macOS](office_for_mac.md)**  
+- Untuk menjalankan skrip dalam mode tanpa pengawasan, periksa [disini](command_line_switches.md).
 
 ---
 
-### Not working ❓
+## Tidak Berhasil? ❓
 
-- If you are **unable to launch MAS** using the PowerShell method, please refer to **Method 2** above.
-- If MAS launches but displays errors, check for troubleshooting steps highlighted in blue and follow them.
-- If issues persist, feel free to reach out to us [here](#).
+- Jika **tidak bisa menjalankan MAS** melalui metode PowerShell, gunakan **Metode 2** di atas
+- Jika MAS terbuka tapi menampilkan error, ikuti langkah troubleshooting yang ditandai warna biru
+- Jika masalah tetap ada, hubungi kami [di sini](troubleshoot.md)
 
 ---
 
 :::note
 
-- The IRM command in PowerShell downloads a script from a specified URL, and the IEX command executes it.
-- Always double-check the URL before executing the command and verify the source is trustworthy when manually downloading files.
-- Be cautious, as some spread malware disguised as MAS by changing the URL in the IRM command.
+- Perintah IRM di PowerShell mengunduh script dari URL tertentu, dan IEX menjalankannya
+- Selalu periksa URL sebelum menjalankan perintah dan pastikan sumber terpercaya saat mengunduh file manual
+- Waspadai malware yang menyamar sebagai MAS dengan mengubah URL di perintah IRM
 
 :::
 
-------------------------------------------------------------------------
+---
 
-## MAS Latest Release
+## Rilis Terbaru MAS
 
-Last Release - v3.2 (6-May-2025)  
-[GitHub](https://github.com/massgravel/Microsoft-Activation-Scripts) / [Azure DevOps](https://dev.azure.com/massgrave/_git/Microsoft-Activation-Scripts) / [Self-hosted Git](https://git.activated.win/massgrave/Microsoft-Activation-Scripts)
+Versi Terakhir - v3.2 (6-Mei-2025)  
+[GitHub](https://github.com/massgravel/Microsoft-Activation-Scripts) | [Azure DevOps](https://dev.azure.com/massgrave/_git/Microsoft-Activation-Scripts) | [Self-hosted Git](https://git.activated.win/massgrave/Microsoft-Activation-Scripts)
 
-------------------------------------------------------------------------
+---
 
-## Features
+## Fitur Utama
 
--   **HWID (Digital License)** Method to Permanently Activate Windows
--   **Ohook** Method to Permanently Activate Office
--   **TSforge** Method to Permanently Activate Windows/ESU/Office
--   **KMS38** Method to Activate Windows Till the Year 2038
--   **Online KMS** Method to Activate Windows/Office For 180 Days (Lifetime With Renewal Task)
--   Advanced Activation Troubleshooting
--   $OEM$ Folders For Preactivation
--   Change Windows Edition
--   Change Office Edition
--   Check Windows/Office Activation Status
--   Available in All In One and Separate Files Versions
--   Fully Open Source and Based on Batch Scripts
--   Fewer Antivirus Detections
+- **HWID (Lisensi Digital)**: Aktivasi permanen Windows
+- **Ohook**: Aktivasi permanen Office
+- **TSforge**: Aktivasi permanen Windows/ESU/Office
+- **KMS38**: Aktivasi Windows hingga tahun 2038
+- **Online KMS**: Aktivasi Windows/Office selama 180 hari (dapat diperpanjang otomatis)
+- Troubleshooting aktivasi lanjutan
+- Folder $OEM$ untuk pra-aktivasi
+- Ubah edisi Windows
+- Ubah edisi Office
+- Cek status aktivasi Windows/Office
+- Tersedia dalam versi All-In-One dan terpisah
+- Open source berbasis script Batch
+- Minim deteksi antivirus
 
-------------------------------------------------------------------------
+---
 
-## Activations Summary
+## Ringkasan Aktivasi
 
-| Activation Type | Supported Product      | Activation Period                    | Is Internet Needed? |
-|:----------------|:-----------------------|:-------------------------------------|:--------------------|
-| HWID            | Windows 10-11          | Permanent                            | Yes                 |
-| Ohook           | Office                 | Permanent                            | No                  |
-| TSforge         | Windows / ESU / Office | Permanent                            | No                  |
-| KMS38           | Windows 10-11-Server   | Till the Year 2038                   | No                  |
-| Online KMS      | Windows / Office       | 180 Days. Lifetime With Renewal Task | Yes                 |
+| Tipe Aktivasi | Produk Didukung | Masa Aktivasi | Butuh Internet? |
+|--------------|----------------|--------------|----------------|
+| HWID | Windows 10-11 | Permanen | Ya |
+| Ohook | Office | Permanen | Tidak |
+| TSforge | Windows/ESU/Office | Permanen | Tidak |
+| KMS38 | Windows 10-11-Server | Hingga 2038 | Tidak |
+| Online KMS | Windows/Office | 180 hari (dapat diperpanjang) | Ya |
 
-For more details, use the respective activation details in Docs and [comparison chart](#).  
-To activate unsupported products such as **Office on Mac**, check [here](#).
+Untuk detail lebih lanjut, lihat dokumentasi dan [tabel perbandingan](#).  
+Untuk aktivasi produk tidak resmi seperti **Office di Mac**, lihat [di sini](#).
 
-------------------------------------------------------------------------
+---
 
-## Screenshots
+## Screenshot
 
-![](/img/MAS_AIO.png)
+![Antarmuka Utama MAS](/img/MAS_AIO.png)
 
-![](/img/MAS_HWID.png)
+![Aktivasi HWID](/img/MAS_HWID.png)
 
-![](/img/MAS_Ohook.png)
+![Aktivasi Ohook](/img/MAS_Ohook.png)
 
-![](/img/MAS_TSforge.png)
+![Aktivasi TSforge](/img/MAS_TSforge.png)
 
-![](/img/MAS_Troubleshoot.png)
+![Menu Troubleshooting](/img/MAS_Troubleshoot.png)
 
-![](/img/MAS_change_windows_edition.png)
+![Ubah Edisi Windows](/img/MAS_change_windows_edition.png)
 
-![](/img/MAS_change_office_edition_1.png)
+![Ubah Edisi Office 1](/img/MAS_change_office_edition_1.png)
 
-![](/img/MAS_change_office_edition_2.png)
+![Ubah Edisi Office 2](/img/MAS_change_office_edition_2.png)
 
-![](/img/MAS_change_office_edition_3.png)
+![Ubah Edisi Office 3](/img/MAS_change_office_edition_3.png)
 
-------------------------------------------------------------------------
+---
 
-Made with Love ❤️
+Dibuat dengan ❤️
