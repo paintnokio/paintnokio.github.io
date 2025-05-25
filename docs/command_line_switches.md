@@ -70,7 +70,7 @@ Jalankan operasi dalam mode silent (tanpa output tetapi jendela CMD tetap muncul
 
 - Ganti `/parameter` dengan parameter dari tabel di atas. Dapat menggunakan multiple parameter, contoh: `/HWID /Ohook`
 - One-liner Powershell ini hanya bekerja pada Windows 8.1 dan versi lebih baru.
-- Untuk mengubah edisi melalui command line, lihat [di sini](change_windows_edition.md#manual-edition-change). Tidak diotomatisasi dalam MAS karena memerlukan reboot dalam beberapa kasus.
+- Untuk mengubah edisi melalui command line, lihat [di sini](#). Tidak diotomatisasi dalam MAS karena memerlukan reboot dalam beberapa kasus.
 
 ------------------------------------------------------------------------
 
