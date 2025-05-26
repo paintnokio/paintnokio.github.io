@@ -1,10 +1,10 @@
 # OEM Folders
 
-To create a pre-activated Windows installation ISO, do the following:
--   Extract the `$OEM$` folder to the desktop using the MAS script.
--   Copy the `$OEM$` folder to the `sources` folder in the Windows installation media (ISO or USB).
--   The directory will appear like this: `\sources\$OEM$` in your altered ISO or on your bootable USB drive.
--   Now use this ISO or bootable USB drive to install Windows, it will either already be activated (KMS38) as soon as it boots or will self-a# Folder OEM
+Untuk membuat ISO instalasi Windows yang sudah diaktifkan sebelumnya, lakukan hal berikut:
+-   Ekstrak folder $OEM$ ke desktop menggunakan skrip MAS.
+-   Salin folder $OEM$ ke folder sources di media instalasi Windows (ISO atau USB).
+-   Direktori akan terlihat seperti ini: \sources\$OEM$ di ISO yang telah dimodifikasi atau di USB drive yang bisa di-boot.
+-   Sekarang gunakan ISO atau USB drive yang bisa di-boot ini untuk menginstal Windows, sistem akan langsung aktif (KMS38) saat booting atau akan mengaktifkan# Folder OEM
 
 Untuk membuat ISO instalasi Windows yang sudah di-pre-activate, lakukan hal berikut:
 - Ekstrak folder `$OEM$` ke desktop menggunakan script MAS.

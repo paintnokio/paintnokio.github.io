@@ -79,7 +79,7 @@ const config = {
             label: 'Unduhan Windows / Office',
           },
           {
-            to: '/bypass-russian-geoblock',
+            to: '/clean_install_windows',
             position: 'left',
             label: 'Panduan',
           },
