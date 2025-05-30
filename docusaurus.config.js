@@ -71,17 +71,12 @@ const config = {
           {
             to: '/cas',
             position: 'left',
-            label: 'Produk Kami',
+            label: 'Panduan',
           },
           {
             to: '/download_windows',
             position: 'left',
-            label: 'Unduhan Windows / Office',
-          },
-          {
-            to: '/clean_install_windows',
-            position: 'left',
-            label: 'Panduan',
+            label: 'Software',
           },
           {
             to: '/news',

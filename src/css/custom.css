@@ -313,7 +313,7 @@ table {
 }
 
 /* src/css/custom.css */
-.menu__link[href*="new"]::before {
+.menu__link[href*="news"]::before {
   content: "";
   display: inline-block;
   width: 20px;
