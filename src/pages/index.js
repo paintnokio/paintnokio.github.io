@@ -13,13 +13,6 @@ export default function Home() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <div className={styles.heroContent}>
-            {/* <img 
-              src="/img/hero-joga.svg" 
-              alt="CodeCraft Logo" 
-              className={styles.logo} 
-              width="120"
-              height="120"
-            /> */}
             <h1 className="hero__title">Dev Comp</h1>
             <p className="hero__subtitle">Alat sumber terbuka untuk penggemar Windows</p>
             <div className={styles.buttons}>
@@ -67,23 +60,65 @@ export default function Home() {
           <div className="container">
             <h2 className={styles.sectionTitle}>Popular Tools</h2>
             <div className={clsx('row', styles.toolsGrid)}>
+              {/* ToolCard dengan multiple links */}
               <ToolCard 
-                title="Windows Activator" 
-                href="/microsoft_activation"
+                title="Windows Toolkit" 
                 icon="🪟"
-                description="Aktifkan Windows 10/11 secara instan"
+                description="Kumpulan alat aktivasi Windows"
+                links={[
+                  {
+                    label: "Aktivator Windows 10",
+                    href: "/microsoft_activation"
+                  },
+                  {
+                    label: "Aktivator Windows 11",
+                    href: "/microsoft_activation"
+                  },
+                  {
+                    label: "Download ISO",
+                    href: "https://msdl.devcomp.fun/"
+                  }
+                ]}
               />
+              
               <ToolCard 
                 title="Office Toolkit" 
-                href="/office_c2r_links"
                 icon="📊"
                 description="Solusi aktivasi Office lengkap"
+                links={[
+                  {
+                    label: "Office 2019 Activator",
+                    href: "/microsoft_activation"
+                  },
+                  {
+                    label: "Office 2021 Activator",
+                    href: "/microsoft_activation"
+                  },
+                  {
+                    label: "C2R Installer",
+                    href: "/office_c2r_links"
+                  }
+                ]}
               />
+              
               <ToolCard 
                 title="Penyelesaian Masalah" 
-                href="/troubleshoot"
                 icon="🔧"
-                description="Masalah umum dan solusinya"
+                description="Solusi untuk masalah umum"
+                links={[
+                  {
+                    label: "Panduan Troubleshoot",
+                    href: "/in-place_repair_upgrade"
+                  },
+                  {
+                    label: "Perbaikan Error",
+                    href: "/fix_powershell"
+                  },
+                  {
+                    label: "Forum Dukungan",
+                    href: "/troubleshoot"
+                  }
+                ]}
               />
             </div>
           </div>
@@ -108,21 +143,32 @@ function FeatureCard({icon, title, description}) {
   );
 }
 
-// Tool Card Component
-function ToolCard({title, href, icon, description}) {
+// Tool Card Component (MODIFIED VERSION)
+function ToolCard({title, icon, description, links}) {
   return (
     <div className={clsx('col col--4', styles.toolCard)}>
-      <a href={href} className={styles.toolLink}>
-        <div className={clsx('card', styles.toolContent)}>
-          <div className={styles.toolHeader}>
-            <span className={styles.toolIcon}>{icon}</span>
-            <h3 className={styles.toolTitle}>{title}</h3>
-          </div>
-          <div className={styles.toolBody}>
-            <p>{description}</p>
+      <div className={clsx('card', styles.toolContent)}>
+        <div className={styles.toolHeader}>
+          <span className={styles.toolIcon}>{icon}</span>
+          <h3 className={styles.toolTitle}>{title}</h3>
+        </div>
+        <div className={styles.toolBody}>
+          <p>{description}</p>
+          
+          {/* Container untuk multiple links */}
+          <div className={styles.toolLinks}>
+            {links.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className={styles.toolLink}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }
