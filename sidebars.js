@@ -22,8 +22,8 @@ const sidebars = {
     'intro',
     {
       type: 'category',
-      label: 'Produk Kami',
-      items: ['cas'],
+      label: 'Panduan',
+      items: ['cas','install_winrar'],
       collapsed: false,
       
     },
