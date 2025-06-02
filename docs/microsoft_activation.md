@@ -116,23 +116,23 @@ Untuk aktivasi produk tidak resmi seperti **Office di Mac**, lihat [di sini](#).
 
 ## Screenshot
 
-![Antarmuka Utama MAS](/img/MAS_AIO.png)
+![Antarmuka Utama MAS](/img/software/powershell/MAS_AIO.png)
 
-![Aktivasi HWID](/img/MAS_HWID.png)
+![Aktivasi HWID](/img/software/powershell/MAS_HWID.png)
 
-![Aktivasi Ohook](/img/MAS_Ohook.png)
+![Aktivasi Ohook](/img/software/powershell/MAS_Ohook.png)
 
-![Aktivasi TSforge](/img/MAS_TSforge.png)
+![Aktivasi TSforge](/img/software/powershell/MAS_TSforge.png)
 
-![Menu Troubleshooting](/img/MAS_Troubleshoot.png)
+![Menu Troubleshooting](/img/software/powershell/MAS_Troubleshoot.png)
 
-![Ubah Edisi Windows](/img/MAS_change_windows_edition.png)
+![Ubah Edisi Windows](/img/software/powershell/MAS_change_windows_edition.png)
 
-![Ubah Edisi Office 1](/img/MAS_change_office_edition_1.png)
+![Ubah Edisi Office 1](/img/software/powershell/MAS_change_office_edition_1.png)
 
-![Ubah Edisi Office 2](/img/MAS_change_office_edition_2.png)
+![Ubah Edisi Office 2](/img/software/powershell/MAS_change_office_edition_2.png)
 
-![Ubah Edisi Office 3](/img/MAS_change_office_edition_3.png)
+![Ubah Edisi Office 3](/img/software/powershell/MAS_change_office_edition_3.png)
 
 ---
 
