@@ -23,7 +23,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Panduan',
-      items: ['cas','install_winrar'],
+      items: ['cas'],
       collapsed: false,
       
     },
@@ -31,6 +31,12 @@ const sidebars = {
       type: 'category',
       label: 'Unduh Windows / Office',
       items: ['download_windows', 'microsoft_activation', 'office_c2r_links', 'office_c2r_custom', 'office_for_mac', 'oem_folder'],
+      collapsed: false,
+    },
+        {
+      type: 'category',
+      label: 'Tools',
+      items: ['install_winrar'],
       collapsed: false,
     },
     {

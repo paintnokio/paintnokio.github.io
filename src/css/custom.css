@@ -170,6 +170,17 @@ table {
 }
 
 /* src/css/custom.css */
+.menu__link[href*="install_winrar"]::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/icons/zip2.svg");
+  background-size: contain;
+  margin-right: 8px;
+}
+
+/* src/css/custom.css */
 .menu__link[href*="microsoft_activation"]::before {
   content: "";
   display: inline-block;
