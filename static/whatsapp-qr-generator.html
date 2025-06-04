@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#128C7E">
+    <title>Generator QR Code WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* CSS dari aplikasi hybrid sebelumnya */
+        /* Pastikan untuk menyalin seluruh CSS yang diberikan sebelumnya */
+        /* [Salin seluruh CSS dari aplikasi hybrid di sini] */
+        :root {
+            --whatsapp-green: #25D366;
+            --whatsapp-dark-green: #128C7E;
+            --whatsapp-darker-green: #075E54;
+            --whatsapp-blue: #34B7F1;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark-green));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark-gray);
+            touch-action: manipulation;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--whatsapp-darker-green);
+            color: var(--white);
+            padding: 20px 25px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .logo {
+            font-size: 42px;
+            background: var(--whatsapp-green);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-title {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .app-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 25px;
+        }
+        
+        .input-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+        }
+        
+        .result-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: var(--whatsapp-darker-green);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--whatsapp-green);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--whatsapp-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: var(--light-gray);
+        }
+        
+        input:focus, textarea:focus {
+            border-color: var(--whatsapp-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
+        }
+        
+        .phone-input-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .phone-prefix {
+            padding: 14px 15px;
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            font-weight: bold;
+            background: var(--light-gray);
+        }
+        
+        #phone {
+            border-radius: 0 10px 10px 0;
+        }
+        
+        button {
+            background: var(--whatsapp-green);
+            color: var(--white);
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:hover {
+            background: var(--whatsapp-dark-green);
+        }
+        
+        /* QR Container */
+        .qr-container {
+            width: 250px;
+            height: 250px;
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        #qrcode {
+            padding: 15px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #qrcode canvas, #qrcode img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+        
+        .result-details {
+            text-align: center;
+            margin: 15px 0;
+            width: 100%;
+        }
+        
+        .phone-result {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .secondary-btn {
+            background: var(--whatsapp-dark-green);
+        }
+        
+        .tertiary-btn {
+            background: var(--whatsapp-blue);
+        }
+        
+        /* History Section */
+        .history-section {
+            padding: 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .history-container {
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .history-item {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .history-item:active {
+            transform: scale(0.98);
+        }
+        
+        .history-item:hover {
+            background: #e8f5e9;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .history-phone {
+            font-weight: 500;
+        }
+        
+        .history-date {
+            font-size: 13px;
+            color: #777;
+        }
+        
+        /* Loader */
+        .loader {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--whatsapp-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Instructions */
+        .instructions {
+            background: #e8f5e9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .instructions h3 {
+            color: var(--whatsapp-dark-green);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: var(--white);
+            background: var(--whatsapp-darker-green);
+            font-size: 14px;
+        }
+        
+        /* Mobile App Specific Styles */
+        .app-header {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .install-prompt {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .install-btn {
+            background: var(--whatsapp-green);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-top: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .input-section, .result-section {
+                padding: 10px;
+                min-width: 100%;
+            }
+            
+            .app-title {
+                font-size: 20px;
+            }
+            
+            .app-subtitle {
+                font-size: 14px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 36px;
+            }
+            
+            header {
+                padding: 15px 20px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .qr-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            #qrcode {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .action-btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 15px;
+            }
+            
+            .qr-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            #qrcode {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .phone-result {
+                font-size: 16px;
+            }
+        }
+        
+        /* Android App Like Styles */
+        .android-app {
+            border-radius: 0;
+            max-width: 100%;
+            min-height: 100vh;
+            box-shadow: none;
+        }
+        
+        .android-app header {
+            border-radius: 0;
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+        
+        .android-app .main-content {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML dari aplikasi hybrid sebelumnya -->
+    <!-- [Salin seluruh HTML dari aplikasi hybrid di sini] -->
+     <div class="container" id="appContainer">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div>
+                    <div class="app-title">Generator QR WhatsApp</div>
+                    <div class="app-subtitle">Buat & Scan QR Code WhatsApp</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <h2 class="section-title">
+                    <i class="fas fa-mobile-alt"></i> Masukkan Detail
+                </h2>
+                
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i> Nomor WhatsApp
+                    </label>
+                    <div class="phone-input-container">
+                        <span class="phone-prefix">+</span>
+                        <input type="tel" id="phone" placeholder="628123456789" required>
+                    </div>
+                    <div class="form-hint">
+                        Contoh: 628123456789 (tanpa + atau spasi)
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">
+                        <i class="fas fa-comment"></i> Pesan Awal (Opsional)
+                    </label>
+                    <textarea id="message" placeholder="Halo, saya ingin menghubungi Anda..." rows="3"></textarea>
+                </div>
+                
+                <button id="generateBtn">
+                    <i class="fas fa-qrcode"></i> Buat QR Code
+                </button>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> Cara Menggunakan:</h3>
+                    <ol>
+                        <li>Masukkan nomor WhatsApp lengkap dengan kode negara</li>
+                        <li>Tambahkan pesan awal jika diperlukan (opsional)</li>
+                        <li>Klik "Buat QR Code"</li>
+                        <li>Scan QR Code menggunakan WhatsApp di menu "Perangkat Tertaut"</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <h2 class="section-title">
+                    <i class="fas fa-qrcode"></i> QR Code Hasil
+                </h2>
+                
+                <div class="loader" id="loader"></div>
+                
+                <div class="qr-container" id="qrContainer">
+                    <div id="qrcode"></div>
+                </div>
+                
+                <div class="result-details">
+                    <div class="phone-result" id="phoneResult">-</div>
+                    <div id="messageResult"></div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="downloadBtn" class="action-btn secondary-btn" disabled>
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button id="saveHistoryBtn" class="action-btn" disabled>
+                        <i class="fas fa-save"></i> Simpan
+                    </button>
+                    <button id="clearBtn" class="action-btn tertiary-btn">
+                        <i class="fas fa-trash"></i> Reset
+                    </button>
+                </div>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-camera"></i> Cara Scan QR Code:</h3>
+                    <ol>
+                        <li>Buka WhatsApp di ponsel Anda</li>
+                        <li>Pergi ke Setelan → Perangkat Tertaut</li>
+                        <li>Pilih "Tautkan Perangkat"</li>
+                        <li>Arahkan kamera ke QR Code di layar ini</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-section">
+            <div class="history-header">
+                <h2 class="section-title">
+                    <i class="fas fa-history"></i> Riwayat QR Code
+                </h2>
+                <button id="clearHistoryBtn" class="tertiary-btn" style="padding: 8px 15px; font-size: 14px;">
+                    <i class="fas fa-trash"></i> Hapus
+                </button>
+            </div>
+            <div class="history-container" id="historyContainer">
+                <!-- History items will be added here -->
+            </div>
+        </div>
+        
+        <footer>
+            <p>Generator QR Code WhatsApp &copy; 2023 | Aplikasi Hybrid Web & Android</p>
+        </footer>
+    </div>
+
+    <div class="install-prompt" id="installPrompt">
+        <p>Pasang aplikasi ini di perangkat Anda untuk pengalaman lebih baik</p>
+        <button class="install-btn" id="installBtn">Pasang Aplikasi</button>
+        <button class="install-btn tertiary-btn" id="dismissBtn" style="margin-left: 10px;">Nanti</button>
+    </div>
+
+    <script>
+        // JavaScript dari aplikasi hybrid sebelumnya
+        // [Salin seluruh JavaScript dari aplikasi hybrid di sini]
+        
+        // Tambahan untuk integrasi dengan Docusaurus
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... kode JavaScript yang ada ...
+            // DOM Elements
+            const generateBtn = document.getElementById('generateBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const saveHistoryBtn = document.getElementById('saveHistoryBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+            const phoneInput = document.getElementById('phone');
+            const messageInput = document.getElementById('message');
+            const qrcodeDiv = document.getElementById('qrcode');
+            const phoneResult = document.getElementById('phoneResult');
+            const messageResult = document.getElementById('messageResult');
+            const loader = document.getElementById('loader');
+            const qrContainer = document.getElementById('qrContainer');
+            const historyContainer = document.getElementById('historyContainer');
+            const appContainer = document.getElementById('appContainer');
+            const installPrompt = document.getElementById('installPrompt');
+            const installBtn = document.getElementById('installBtn');
+            const dismissBtn = document.getElementById('dismissBtn');
+            
+            // Initialize variables
+            let qrCode = null;
+            let deferredPrompt = null;
+            
+            // Check if running in Android WebView
+            function isAndroidWebView() {
+                return navigator.userAgent.includes('; wv)');
+            }
+            
+            // Apply Android specific styles if needed
+            if (isAndroidWebView()) {
+                appContainer.classList.add('android-app');
+            }
+            
+            // Load history from localStorage
+            let history = JSON.parse(localStorage.getItem('whatsappQRHistory')) || [];
+            renderHistory();
+            
+            // Initialize with sample data
+            phoneInput.value = '628123456789';
+            messageInput.value = 'Halo, saya ingin menghubungi Anda';
+            
+            // Generate QR Code
+            generateBtn.addEventListener('click', function() {
+                const phone = phoneInput.value.trim();
+                const message = messageInput.value.trim();
+                
+                // Validate phone number
+                if (!phone || !/^\d{10,15}$/.test(phone)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Nomor Tidak Valid',
+                        text: 'Masukkan nomor WhatsApp 10-15 digit tanpa spasi atau karakter khusus'
+                    });
+                    return;
+                }
+                
+                // Show loader and hide QR container
+                loader.style.display = 'block';
+                qrContainer.style.display = 'none';
+                downloadBtn.disabled = true;
+                saveHistoryBtn.disabled = true;
+                
+                // Clear previous QR code
+                if (qrCode) {
+                    qrCode.clear();
+                    qrcodeDiv.innerHTML = '';
+                }
+                
+                // Generate WhatsApp link
+                let whatsappLink = `https://wa.me/${phone}`;
+                if (message) {
+                    whatsappLink += `?text=${encodeURIComponent(message)}`;
+                }
+                
+                // Generate new QR code
+                try {
+                    // Create canvas element directly
+                    const canvas = document.createElement('canvas');
+                    QRCode.toCanvas(canvas, whatsappLink, {
+                        width: 200,
+                        margin: 2,
+                        color: {
+                            dark: '#000000',
+                            light: '#ffffff'
+                        }
+                    }, function(error) {
+                        if (error) {
+                            console.error('QR Code generation error:', error);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Terjadi Kesalahan',
+                                text: 'Gagal membuat QR Code'
+                            });
+                            loader.style.display = 'none';
+                            return;
+                        }
+                        
+                        // Clear previous content
+                        qrcodeDiv.innerHTML = '';
+                        qrcodeDiv.appendChild(canvas);
+                        
+                        // Update result details
+                        phoneResult.textContent = `+${phone}`;
+                        if (message) {
+                            messageResult.textContent = `Pesan: "${message}"`;
+                        } else {
+                            messageResult.textContent = '';
+                        }
+                        
+                        // Hide loader and show QR code
+                        loader.style.display = 'none';
+                        qrContainer.style.display = 'flex';
+                        
+                        // Enable buttons
+                        downloadBtn.disabled = false;
+                        saveHistoryBtn.disabled = false;
+                    });
+                } catch (error) {
+                    console.error('QR Code generation error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Terjadi Kesalahan',
+                        text: 'Gagal membuat QR Code'
+                    });
+                    loader.style.display = 'none';
+                }
+            });
+            
+            // Download QR Code
+            downloadBtn.addEventListener('click', function() {
+                const canvas = qrcodeDiv.querySelector('canvas');
+                const phone = phoneInput.value.trim();
+                
+                if (canvas) {
+                    const link = document.createElement('a');
+                    link.download = `whatsapp-qr-${phone}.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Tidak Ada QR Code',
+                        text: 'Silakan buat QR Code terlebih dahulu'
+                    });
+                }
+            });
+            
+            // Save to history
+            saveHistoryBtn.addEventListener('click', function() {
+                const phone = phoneInput.value.trim();
+                const message = messageInput.value.trim();
+                
+                if (!phone) {
+                    return;
+                }
+                
+                // Create history item
+                const historyItem = {
+                    phone: phone,
+                    message: message,
+                    timestamp: new Date().toISOString(),
+                    date: new Date().toLocaleString('id-ID', {
+                        day: '2-digit',
+                        month: 'short',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+                
+                // Add to history (prevent duplicates)
+                const existingIndex = history.findIndex(item => item.phone === phone);
+                if (existingIndex !== -1) {
+                    history[existingIndex] = historyItem;
+                } else {
+                    history.unshift(historyItem);
+                }
+                
+                // Keep only last 10 items
+                history = history.slice(0, 10);
+                
+                // Save to localStorage
+                localStorage.setItem('whatsappQRHistory', JSON.stringify(history));
+                
+                // Render history
+                renderHistory();
+                
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tersimpan!',
+                    text: 'QR Code telah disimpan dalam riwayat',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            });
+            
+            // Clear form
+            clearBtn.addEventListener('click', function() {
+                phoneInput.value = '';
+                messageInput.value = '';
+                qrcodeDiv.innerHTML = '';
+                phoneResult.textContent = '-';
+                messageResult.textContent = '';
+                downloadBtn.disabled = true;
+                saveHistoryBtn.disabled = true;
+                qrContainer.style.display = 'none';
+            });
+            
+            // Clear history
+            clearHistoryBtn.addEventListener('click', function() {
+                Swal.fire({
+                    title: 'Hapus Riwayat?',
+                    text: "Semua riwayat QR Code akan dihapus permanen",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        history = [];
+                        localStorage.removeItem('whatsappQRHistory');
+                        renderHistory();
+                        Swal.fire(
+                            'Dihapus!',
+                            'Riwayat QR Code telah dihapus',
+                            'success'
+                        );
+                    }
+                });
+            });
+            
+            // Render history
+            function renderHistory() {
+                historyContainer.innerHTML = '';
+                
+                if (history.length === 0) {
+                    historyContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: #777;">Riwayat masih kosong</p>';
+                    return;
+                }
+                
+                history.forEach(item => {
+                    const historyItem = document.createElement('div');
+                    historyItem.className = 'history-item';
+                    historyItem.innerHTML = `
+                        <div>
+                            <div class="history-phone">+${item.phone}</div>
+                            <div class="history-date">${item.date}</div>
+                        </div>
+                        <div>
+                            <i class="fas fa-redo"></i>
+                        </div>
+                    `;
+                    
+                    historyItem.addEventListener('click', function() {
+                        phoneInput.value = item.phone;
+                        messageInput.value = item.message || '';
+                        
+                        // Auto-generate QR code
+                        generateBtn.click();
+                        
+                        // Scroll to top
+                        window.scrollTo(0, 0);
+                    });
+                    
+                    historyContainer.appendChild(historyItem);
+                });
+            }
+            
+            // PWA Installation Prompt
+            window.addEventListener('beforeinstallprompt', (e) => {
+                // Prevent the mini-infobar from appearing on mobile
+                e.preventDefault();
+                // Stash the event so it can be triggered later
+                deferredPrompt = e;
+                
+                // Show the install prompt if not in WebView
+                if (!isAndroidWebView()) {
+                    setTimeout(() => {
+                        installPrompt.style.display = 'block';
+                    }, 5000);
+                }
+            });
+            
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    // Show the install prompt
+                    deferredPrompt.prompt();
+                    // Wait for the user to respond to the prompt
+                    const { outcome } = await deferredPrompt.userChoice;
+                    // Optionally, send analytics event with outcome of user choice
+                    console.log(`User response to the install prompt: ${outcome}`);
+                    // We've used the prompt, and can't use it again, throw it away
+                    deferredPrompt = null;
+                    // Hide the install prompt
+                    installPrompt.style.display = 'none';
+                }
+            });
+            
+            dismissBtn.addEventListener('click', () => {
+                installPrompt.style.display = 'none';
+            });
+            
+            // Check if app is launched from home screen
+            window.addEventListener('appinstalled', () => {
+                console.log('PWA was installed');
+                installPrompt.style.display = 'none';
+            });
+            
+            // Android back button support
+            document.addEventListener('backbutton', handleBackButton, false);
+            function handleBackButton() {
+                // Handle back button for Android
+                if (window.confirm('Apakah Anda ingin keluar dari aplikasi?')) {
+                    navigator.app.exitApp();
+                }
+            }
+            
+            // Fungsi untuk mengirim tinggi konten ke parent (Docusaurus)
+            function sendHeightToParent() {
+                const height = document.documentElement.scrollHeight;
+                window.parent.postMessage({
+                    type: 'setHeight',
+                    height: height
+                }, '*');
+            }
+            
+            // Kirim tinggi saat dimuat dan saat ukuran berubah
+            sendHeightToParent();
+            window.addEventListener('resize', sendHeightToParent);
+            
+            // Kirim tinggi saat ada perubahan pada riwayat
+            const observer = new MutationObserver(sendHeightToParent);
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: true
+            });
+        });
+    </script>
+</body>
+</html>

@@ -6,6 +6,15 @@
   --ifm-color-primary-light: #6251d2;
   --ifm-color-primary-lighter: #6c5cd5;
   --ifm-color-primary-lightest: #887bdd;
+
+  /* Untuk halaman generator khusus */
+  --ifm-color-primary: #25d366;
+  --ifm-color-primary-dark: #21be5c;
+  --ifm-color-primary-darker: #1fb357;
+  --ifm-color-primary-darkest: #199347;
+  --ifm-color-primary-light: #3cd772;
+  --ifm-color-primary-lighter: #47d97c;
+  --ifm-color-primary-lightest: #6ae096;
 }
 
 [data-theme='dark'] {
@@ -16,6 +25,17 @@
   --ifm-color-primary-light: #cac4f2;
   --ifm-color-primary-lighter: #d9d5f6;
   --ifm-color-primary-lightest: #f8f7fd;
+}
+
+/* Untuk halaman generator khusus whatsapp */
+html[data-theme='dark'] .whatsapp-qr-container {
+  --whatsapp-darker-green: #0c4a42;
+  --whatsapp-dark-green: #1a7a6d;
+  background: linear-gradient(135deg, #1a7a6d, #0c4a42);
+}
+
+.whatsapp-qr-container {
+  background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
 /* Style diagram Mermaid */
@@ -70,6 +90,16 @@
 /* Contoh ikon spesifik */
 .navbar__item[href*="cas"]::before {
   background-image: url("/img/icons/software.svg");
+}
+
+/* Contoh ikon spesifik */
+.navbar__item[href*="troubleshoot"]::before {
+  background-image: url("/img/icons/troubleshoot.svg");
+}
+
+/* Contoh ikon spesifik */
+.navbar__item[href*="qr-generator"]::before {
+  background-image: url("/img/icons/qr-code-scan.svg");
 }
 
 /* Contoh ikon spesifik */
@@ -176,6 +206,17 @@ table {
   width: 20px;
   height: 20px;
   background-image: url("/img/icons/zip2.svg");
+  background-size: contain;
+  margin-right: 8px;
+}
+
+/* src/css/custom.css */
+.menu__link[href*="qr-generator"]::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("/img/icons/qr-code-scan.svg");
   background-size: contain;
   margin-right: 8px;
 }
