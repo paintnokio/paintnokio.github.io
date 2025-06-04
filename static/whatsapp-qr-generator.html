@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,7 @@
             --dark-gray: #333;
             --white: #ffffff;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +31,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
-        
+
         body {
             background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark-green));
             min-height: 100vh;
@@ -41,7 +42,7 @@
             color: var(--dark-gray);
             touch-action: manipulation;
         }
-        
+
         .container {
             width: 100%;
             max-width: 800px;
@@ -51,7 +52,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         /* Header Styles */
         header {
             background: var(--whatsapp-darker-green);
@@ -63,14 +64,14 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-bottom: 10px;
         }
-        
+
         .logo {
             font-size: 42px;
             background: var(--whatsapp-green);
@@ -82,32 +83,32 @@
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+
         .app-title {
             font-size: 24px;
             font-weight: 600;
             text-align: left;
         }
-        
+
         .app-subtitle {
             font-size: 16px;
             opacity: 0.9;
             margin-top: 5px;
         }
-        
+
         /* Main Content */
         .main-content {
             display: flex;
             flex-wrap: wrap;
             padding: 25px;
         }
-        
+
         .input-section {
             flex: 1;
             min-width: 300px;
             padding: 15px;
         }
-        
+
         .result-section {
             flex: 1;
             min-width: 300px;
@@ -116,7 +117,7 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .section-title {
             font-size: 20px;
             color: var(--whatsapp-darker-green);
@@ -125,7 +126,7 @@
             border-bottom: 2px solid var(--whatsapp-green);
             position: relative;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -135,19 +136,20 @@
             height: 2px;
             background: var(--whatsapp-blue);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark-gray);
         }
-        
-        input, textarea {
+
+        input,
+        textarea {
             width: 100%;
             padding: 14px;
             border: 2px solid #ddd;
@@ -156,18 +158,19 @@
             transition: all 0.3s;
             background: var(--light-gray);
         }
-        
-        input:focus, textarea:focus {
+
+        input:focus,
+        textarea:focus {
             border-color: var(--whatsapp-green);
             outline: none;
             box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
         }
-        
+
         .phone-input-container {
             display: flex;
             align-items: center;
         }
-        
+
         .phone-prefix {
             padding: 14px 15px;
             background: #f5f5f5;
@@ -177,11 +180,11 @@
             font-weight: bold;
             background: var(--light-gray);
         }
-        
+
         #phone {
             border-radius: 0 10px 10px 0;
         }
-        
+
         button {
             background: var(--whatsapp-green);
             color: var(--white);
@@ -199,16 +202,16 @@
             justify-content: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         button:active {
             transform: translateY(2px);
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
         }
-        
+
         button:hover {
             background: var(--whatsapp-dark-green);
         }
-        
+
         /* QR Container */
         .qr-container {
             width: 250px;
@@ -223,7 +226,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         #qrcode {
             padding: 15px;
             width: 200px;
@@ -232,19 +235,20 @@
             justify-content: center;
             align-items: center;
         }
-        
-        #qrcode canvas, #qrcode img {
+
+        #qrcode canvas,
+        #qrcode img {
             max-width: 100%;
             max-height: 100%;
             border-radius: 8px;
         }
-        
+
         .result-details {
             text-align: center;
             margin: 15px 0;
             width: 100%;
         }
-        
+
         .phone-result {
             font-size: 18px;
             font-weight: bold;
@@ -252,7 +256,7 @@
             margin-bottom: 10px;
             word-break: break-all;
         }
-        
+
         .action-buttons {
             display: flex;
             gap: 15px;
@@ -260,40 +264,40 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
-        
+
         .action-btn {
             flex: 1;
             min-width: 120px;
         }
-        
+
         .secondary-btn {
             background: var(--whatsapp-dark-green);
         }
-        
+
         .tertiary-btn {
             background: var(--whatsapp-blue);
         }
-        
+
         /* History Section */
         .history-section {
             padding: 20px;
             background: #f9f9f9;
             border-top: 1px solid #eee;
         }
-        
+
         .history-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
-        
+
         .history-container {
             max-height: 200px;
             overflow-y: auto;
             padding-right: 10px;
         }
-        
+
         .history-item {
             background: var(--white);
             border-radius: 10px;
@@ -306,25 +310,25 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .history-item:active {
             transform: scale(0.98);
         }
-        
+
         .history-item:hover {
             background: #e8f5e9;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
         }
-        
+
         .history-phone {
             font-weight: 500;
         }
-        
+
         .history-date {
             font-size: 13px;
             color: #777;
         }
-        
+
         /* Loader */
         .loader {
             display: none;
@@ -336,12 +340,17 @@
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         /* Instructions */
         .instructions {
             background: #e8f5e9;
@@ -350,7 +359,7 @@
             margin-top: 20px;
             font-size: 14px;
         }
-        
+
         .instructions h3 {
             color: var(--whatsapp-dark-green);
             margin-bottom: 10px;
@@ -358,16 +367,16 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .instructions ol {
             padding-left: 20px;
         }
-        
+
         .instructions li {
             margin-bottom: 8px;
             line-height: 1.5;
         }
-        
+
         /* Footer */
         footer {
             text-align: center;
@@ -376,13 +385,13 @@
             background: var(--whatsapp-darker-green);
             font-size: 14px;
         }
-        
+
         /* Mobile App Specific Styles */
         .app-header {
             padding-top: 15px;
             padding-bottom: 15px;
         }
-        
+
         .install-prompt {
             display: none;
             position: fixed;
@@ -398,7 +407,7 @@
             max-width: 400px;
             text-align: center;
         }
-        
+
         .install-btn {
             background: var(--whatsapp-green);
             color: var(--white);
@@ -409,85 +418,86 @@
             font-weight: bold;
             cursor: pointer;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .main-content {
                 flex-direction: column;
                 padding: 15px;
             }
-            
-            .input-section, .result-section {
+
+            .input-section,
+            .result-section {
                 padding: 10px;
                 min-width: 100%;
             }
-            
+
             .app-title {
                 font-size: 20px;
             }
-            
+
             .app-subtitle {
                 font-size: 14px;
             }
-            
+
             .logo {
                 width: 60px;
                 height: 60px;
                 font-size: 36px;
             }
-            
+
             header {
                 padding: 15px 20px;
             }
-            
+
             .section-title {
                 font-size: 18px;
             }
-            
+
             .qr-container {
                 width: 220px;
                 height: 220px;
             }
-            
+
             #qrcode {
                 width: 180px;
                 height: 180px;
             }
-            
+
             .action-buttons {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .action-btn {
                 width: 100%;
             }
         }
-        
+
         @media (max-width: 480px) {
             body {
                 padding: 10px;
             }
-            
+
             .container {
                 border-radius: 15px;
             }
-            
+
             .qr-container {
                 width: 200px;
                 height: 200px;
             }
-            
+
             #qrcode {
                 width: 160px;
                 height: 160px;
             }
-            
+
             .phone-result {
                 font-size: 16px;
             }
         }
-        
+
         /* Android App Like Styles */
         .android-app {
             border-radius: 0;
@@ -495,22 +505,23 @@
             min-height: 100vh;
             box-shadow: none;
         }
-        
+
         .android-app header {
             border-radius: 0;
             padding-top: 30px;
             padding-bottom: 20px;
         }
-        
+
         .android-app .main-content {
             padding-bottom: 80px;
         }
     </style>
 </head>
+
 <body>
     <!-- HTML dari aplikasi hybrid sebelumnya -->
     <!-- [Salin seluruh HTML dari aplikasi hybrid di sini] -->
-     <div class="container" id="appContainer">
+    <div class="container" id="appContainer">
         <header>
             <div class="logo-container">
                 <div class="logo">
@@ -522,13 +533,13 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="main-content">
             <div class="input-section">
                 <h2 class="section-title">
                     <i class="fas fa-mobile-alt"></i> Masukkan Detail
                 </h2>
-                
+
                 <div class="form-group">
                     <label for="phone">
                         <i class="fas fa-phone"></i> Nomor WhatsApp
@@ -541,18 +552,18 @@
                         Contoh: 628123456789 (tanpa + atau spasi)
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="message">
                         <i class="fas fa-comment"></i> Pesan Awal (Opsional)
                     </label>
                     <textarea id="message" placeholder="Halo, saya ingin menghubungi Anda..." rows="3"></textarea>
                 </div>
-                
+
                 <button id="generateBtn">
                     <i class="fas fa-qrcode"></i> Buat QR Code
                 </button>
-                
+
                 <div class="instructions">
                     <h3><i class="fas fa-info-circle"></i> Cara Menggunakan:</h3>
                     <ol>
@@ -563,23 +574,23 @@
                     </ol>
                 </div>
             </div>
-            
+
             <div class="result-section">
                 <h2 class="section-title">
                     <i class="fas fa-qrcode"></i> QR Code Hasil
                 </h2>
-                
+
                 <div class="loader" id="loader"></div>
-                
+
                 <div class="qr-container" id="qrContainer">
                     <div id="qrcode"></div>
                 </div>
-                
+
                 <div class="result-details">
                     <div class="phone-result" id="phoneResult">-</div>
                     <div id="messageResult"></div>
                 </div>
-                
+
                 <div class="action-buttons">
                     <button id="downloadBtn" class="action-btn secondary-btn" disabled>
                         <i class="fas fa-download"></i> Download
@@ -591,7 +602,7 @@
                         <i class="fas fa-trash"></i> Reset
                     </button>
                 </div>
-                
+
                 <div class="instructions">
                     <h3><i class="fas fa-camera"></i> Cara Scan QR Code:</h3>
                     <ol>
@@ -603,7 +614,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="history-section">
             <div class="history-header">
                 <h2 class="section-title">
@@ -617,9 +628,11 @@
                 <!-- History items will be added here -->
             </div>
         </div>
-        
+
         <footer>
-            <p>Generator QR Code WhatsApp &copy; 2023 | Aplikasi Hybrid Web & Android</p>
+            <p>Generator QR Code WhatsApp &copy;
+                <script>document.write(new Date().getFullYear())</script> | Aplikasi Hybrid Web & Android
+            </p>
         </footer>
     </div>
 
@@ -632,9 +645,9 @@
     <script>
         // JavaScript dari aplikasi hybrid sebelumnya
         // [Salin seluruh JavaScript dari aplikasi hybrid di sini]
-        
+
         // Tambahan untuk integrasi dengan Docusaurus
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // ... kode JavaScript yang ada ...
             // DOM Elements
             const generateBtn = document.getElementById('generateBtn');
@@ -654,34 +667,34 @@
             const installPrompt = document.getElementById('installPrompt');
             const installBtn = document.getElementById('installBtn');
             const dismissBtn = document.getElementById('dismissBtn');
-            
+
             // Initialize variables
             let qrCode = null;
             let deferredPrompt = null;
-            
+
             // Check if running in Android WebView
             function isAndroidWebView() {
                 return navigator.userAgent.includes('; wv)');
             }
-            
+
             // Apply Android specific styles if needed
             if (isAndroidWebView()) {
                 appContainer.classList.add('android-app');
             }
-            
+
             // Load history from localStorage
             let history = JSON.parse(localStorage.getItem('whatsappQRHistory')) || [];
             renderHistory();
-            
+
             // Initialize with sample data
             phoneInput.value = '628123456789';
             messageInput.value = 'Halo, saya ingin menghubungi Anda';
-            
+
             // Generate QR Code
-            generateBtn.addEventListener('click', function() {
+            generateBtn.addEventListener('click', function () {
                 const phone = phoneInput.value.trim();
                 const message = messageInput.value.trim();
-                
+
                 // Validate phone number
                 if (!phone || !/^\d{10,15}$/.test(phone)) {
                     Swal.fire({
@@ -691,25 +704,25 @@
                     });
                     return;
                 }
-                
+
                 // Show loader and hide QR container
                 loader.style.display = 'block';
                 qrContainer.style.display = 'none';
                 downloadBtn.disabled = true;
                 saveHistoryBtn.disabled = true;
-                
+
                 // Clear previous QR code
                 if (qrCode) {
                     qrCode.clear();
                     qrcodeDiv.innerHTML = '';
                 }
-                
+
                 // Generate WhatsApp link
                 let whatsappLink = `https://wa.me/${phone}`;
                 if (message) {
                     whatsappLink += `?text=${encodeURIComponent(message)}`;
                 }
-                
+
                 // Generate new QR code
                 try {
                     // Create canvas element directly
@@ -721,7 +734,7 @@
                             dark: '#000000',
                             light: '#ffffff'
                         }
-                    }, function(error) {
+                    }, function (error) {
                         if (error) {
                             console.error('QR Code generation error:', error);
                             Swal.fire({
@@ -732,11 +745,11 @@
                             loader.style.display = 'none';
                             return;
                         }
-                        
+
                         // Clear previous content
                         qrcodeDiv.innerHTML = '';
                         qrcodeDiv.appendChild(canvas);
-                        
+
                         // Update result details
                         phoneResult.textContent = `+${phone}`;
                         if (message) {
@@ -744,11 +757,11 @@
                         } else {
                             messageResult.textContent = '';
                         }
-                        
+
                         // Hide loader and show QR code
                         loader.style.display = 'none';
                         qrContainer.style.display = 'flex';
-                        
+
                         // Enable buttons
                         downloadBtn.disabled = false;
                         saveHistoryBtn.disabled = false;
@@ -763,12 +776,12 @@
                     loader.style.display = 'none';
                 }
             });
-            
+
             // Download QR Code
-            downloadBtn.addEventListener('click', function() {
+            downloadBtn.addEventListener('click', function () {
                 const canvas = qrcodeDiv.querySelector('canvas');
                 const phone = phoneInput.value.trim();
-                
+
                 if (canvas) {
                     const link = document.createElement('a');
                     link.download = `whatsapp-qr-${phone}.png`;
@@ -782,16 +795,16 @@
                     });
                 }
             });
-            
+
             // Save to history
-            saveHistoryBtn.addEventListener('click', function() {
+            saveHistoryBtn.addEventListener('click', function () {
                 const phone = phoneInput.value.trim();
                 const message = messageInput.value.trim();
-                
+
                 if (!phone) {
                     return;
                 }
-                
+
                 // Create history item
                 const historyItem = {
                     phone: phone,
@@ -805,7 +818,7 @@
                         minute: '2-digit'
                     })
                 };
-                
+
                 // Add to history (prevent duplicates)
                 const existingIndex = history.findIndex(item => item.phone === phone);
                 if (existingIndex !== -1) {
@@ -813,16 +826,16 @@
                 } else {
                     history.unshift(historyItem);
                 }
-                
+
                 // Keep only last 10 items
                 history = history.slice(0, 10);
-                
+
                 // Save to localStorage
                 localStorage.setItem('whatsappQRHistory', JSON.stringify(history));
-                
+
                 // Render history
                 renderHistory();
-                
+
                 Swal.fire({
                     icon: 'success',
                     title: 'Tersimpan!',
@@ -831,9 +844,9 @@
                     showConfirmButton: false
                 });
             });
-            
+
             // Clear form
-            clearBtn.addEventListener('click', function() {
+            clearBtn.addEventListener('click', function () {
                 phoneInput.value = '';
                 messageInput.value = '';
                 qrcodeDiv.innerHTML = '';
@@ -843,9 +856,9 @@
                 saveHistoryBtn.disabled = true;
                 qrContainer.style.display = 'none';
             });
-            
+
             // Clear history
-            clearHistoryBtn.addEventListener('click', function() {
+            clearHistoryBtn.addEventListener('click', function () {
                 Swal.fire({
                     title: 'Hapus Riwayat?',
                     text: "Semua riwayat QR Code akan dihapus permanen",
@@ -868,16 +881,16 @@
                     }
                 });
             });
-            
+
             // Render history
             function renderHistory() {
                 historyContainer.innerHTML = '';
-                
+
                 if (history.length === 0) {
                     historyContainer.innerHTML = '<p style="text-align: center; padding: 20px; color: #777;">Riwayat masih kosong</p>';
                     return;
                 }
-                
+
                 history.forEach(item => {
                     const historyItem = document.createElement('div');
                     historyItem.className = 'history-item';
@@ -890,29 +903,29 @@
                             <i class="fas fa-redo"></i>
                         </div>
                     `;
-                    
-                    historyItem.addEventListener('click', function() {
+
+                    historyItem.addEventListener('click', function () {
                         phoneInput.value = item.phone;
                         messageInput.value = item.message || '';
-                        
+
                         // Auto-generate QR code
                         generateBtn.click();
-                        
+
                         // Scroll to top
                         window.scrollTo(0, 0);
                     });
-                    
+
                     historyContainer.appendChild(historyItem);
                 });
             }
-            
+
             // PWA Installation Prompt
             window.addEventListener('beforeinstallprompt', (e) => {
                 // Prevent the mini-infobar from appearing on mobile
                 e.preventDefault();
                 // Stash the event so it can be triggered later
                 deferredPrompt = e;
-                
+
                 // Show the install prompt if not in WebView
                 if (!isAndroidWebView()) {
                     setTimeout(() => {
@@ -920,7 +933,7 @@
                     }, 5000);
                 }
             });
-            
+
             installBtn.addEventListener('click', async () => {
                 if (deferredPrompt) {
                     // Show the install prompt
@@ -935,17 +948,17 @@
                     installPrompt.style.display = 'none';
                 }
             });
-            
+
             dismissBtn.addEventListener('click', () => {
                 installPrompt.style.display = 'none';
             });
-            
+
             // Check if app is launched from home screen
             window.addEventListener('appinstalled', () => {
                 console.log('PWA was installed');
                 installPrompt.style.display = 'none';
             });
-            
+
             // Android back button support
             document.addEventListener('backbutton', handleBackButton, false);
             function handleBackButton() {
@@ -954,7 +967,7 @@
                     navigator.app.exitApp();
                 }
             }
-            
+
             // Fungsi untuk mengirim tinggi konten ke parent (Docusaurus)
             function sendHeightToParent() {
                 const height = document.documentElement.scrollHeight;
@@ -963,11 +976,11 @@
                     height: height
                 }, '*');
             }
-            
+
             // Kirim tinggi saat dimuat dan saat ukuran berubah
             sendHeightToParent();
             window.addEventListener('resize', sendHeightToParent);
-            
+
             // Kirim tinggi saat ada perubahan pada riwayat
             const observer = new MutationObserver(sendHeightToParent);
             observer.observe(document.body, {
@@ -978,4 +991,5 @@
         });
     </script>
 </body>
+
 </html>
