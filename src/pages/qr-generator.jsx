@@ -11,7 +11,7 @@ function QRGeneratorPage() {
     >
       <Head>
         <meta name="keywords" content="whatsapp qr generator, barcode whatsapp, qr code whatsapp, link whatsapp" />
-        <link rel="canonical" href="https://yourwebsite.com/qr-generator" />
+        <link rel="canonical" href="https://devcomp.fun/qr-generator" />
       </Head>
       
       <main>
