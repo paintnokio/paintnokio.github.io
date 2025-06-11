@@ -108,7 +108,7 @@ export default function Home() {
                 links={[
                   {
                     label: "Panduan Troubleshoot",
-                    href: "/in-place_repair_upgrade"
+                    href: "/in_place_repair_upgrade"
                   },
                   {
                     label: "Perbaikan Error",

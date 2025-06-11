@@ -42,7 +42,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Bantuan & Info',
-      items: ['command_line_switches', 'bypass-russian-geoblock', 'in-place_repair_upgrade', 'fix-wpa-registry', 'fix_powershell', 'remove_malware', 'clean_install_windows'],
+      items: ['command_line_switches', 'bypass_russian_geoblock', 'in_place_repair_upgrade', 'fix_wpa_registry', 'fix_powershell', 'remove_malware', 'clean_install_windows'],
       collapsed: false,
     },
     'news',
