@@ -67,12 +67,6 @@ Semua tautan di bawah ini bersumber resmi dari Microsoft dengan lisensi Retail d
 2. **Jika error masih muncul**:
    - Gunakan versi **offline installer**
    - Pastikan arsitektur (32/64-bit) sesuai
-
----
-
-**Pengguna Rusia**:
-- Ikuti [panduan ini](bypass-russian-geoblock.md) untuk melewati pemblokiran geografis saat mengunduh Office
-
 </details>
 
 :::info
