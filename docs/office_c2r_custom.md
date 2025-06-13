@@ -6,8 +6,6 @@
 - Office Retail (contoh: O365) memiliki pembaruan fitur terbaru sedangkan Office Volume (contoh: ProPlus 2024) tidak.
 - Perlu diketahui bahwa dalam metode instalasi custom Office C2R resmi, tidak tersedia ISO atau solusi satu-klik. Berikut panduan paling sederhana untuk instalasi Office yang dikustomisasi.
 
-- Pengguna Rusia perlu mengikuti [panduan ini](bypass-russian-geoblock.md) untuk melewati pemblokiran geografis saat mengunduh Office.
-
 :::
 
 ---
