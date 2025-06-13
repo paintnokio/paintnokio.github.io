@@ -88,6 +88,7 @@
 }
 
 .heroBanner .button--primary {
+  margin-right: 10px;
   background: white;
   color: #4e4376;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -112,6 +113,13 @@
   transform: translateY(-3px);
 }
 
+.buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  
+}
 /* Floating animation for logo */
 .heroBanner .logo {
   animation: float 6s ease-in-out infinite;
