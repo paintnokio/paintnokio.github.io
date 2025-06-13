@@ -32,7 +32,6 @@
 
 3. **Troubleshooting Guide**  
    - [Solusi error Windows umum](fix_powershell)
-   - [Perbaikan sistem otomatis](fix-wpa-registry)
 
 ---
 
